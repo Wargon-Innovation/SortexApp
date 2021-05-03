@@ -8,7 +8,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Frame IsClippedToBounds="True" HasShadow="True" Padding="0" Margin="0,10,0,10" BorderColor="White" BackgroundColor="{StaticResource Accent}">
+                            <Frame IsClippedToBounds="True" HasShadow="True" Padding="0" Margin="0,40,0,10" BorderColor="White" BackgroundColor="{StaticResource Accent}">
                                 <StackLayout Padding="0" HeightRequest="100">
                                     <Label Text="{Binding Name}"  FontSize="Medium" HorizontalOptions="Center" TextColor="White"></Label>
                                     

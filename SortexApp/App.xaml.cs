@@ -21,7 +21,7 @@ namespace SortexApp
 
         protected override async void OnStart()
         {
-          await Order.LoadOrderAsync();
+            await Order.LoadOrderAsync();
         }
 
         protected override void OnSleep()
