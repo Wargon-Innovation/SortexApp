@@ -3,11 +3,13 @@ using SortexApp.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using SortexApp.ViewModels;
 
 namespace SortexApp
 {
     public partial class App : Application
     {
+        static public OrderViewModel Order { get; set; } = new OrderViewModel();
 
         public App()
         {
@@ -17,8 +19,9 @@ namespace SortexApp
             MainPage = new AppShell();
         }
 
-        protected override void OnStart()
+        protected override async void OnStart()
         {
+          await Order.LoadOrderAsync();
         }
 
         protected override void OnSleep()
@@ -28,5 +31,6 @@ namespace SortexApp
         protected override void OnResume()
         {
         }
+
     }
 }
