@@ -15,17 +15,16 @@ namespace SortexApp.Views
             
         }
 
-        private void btnFraction_Clicked(object sender, EventArgs e)
+        private async void btnFraction_Clicked(object sender, EventArgs e)
         {
-            
+            FractionPage fractionPage = new FractionPage();
+            await Navigation.PushAsync(fractionPage);
         }
 
         private async void btnOrder_Clicked(object sender, EventArgs e)
         {
-            
-            
-            OrderPage orderPage = new OrderPage();
-            
+                       
+            OrderPage orderPage = new OrderPage();            
             await Navigation.PushAsync(orderPage);
             
            

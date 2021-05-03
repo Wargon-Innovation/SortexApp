@@ -45,7 +45,7 @@
                             WidthRequest="140"
                             HeightRequest="150"/>
                     <Button Margin="0,10,0,0" x:Name="btnOrder" Text="Order" Clicked="btnOrder_Clicked" CornerRadius="10" 
-                        BackgroundColor="{StaticResource Primary}"
+                        BackgroundColor="{StaticResource Primary}"                            
                         TextColor="White"
                             WidthRequest="140"
                             HeightRequest="150"/>
