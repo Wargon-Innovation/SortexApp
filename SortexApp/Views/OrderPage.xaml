@@ -19,6 +19,7 @@
                             <StackLayout>
                                 <Label Text="{Binding Name}" TextColor="White" FontSize="Large"></Label>
                                 <Label Text="{Binding Description}" IsVisible="{Binding isVisible}" TextColor="White"></Label>
+                                <Label Text="{Binding Start}" IsVisible="{Binding isVisible}" TextColor="White"></Label>
                             </StackLayout>
 
 

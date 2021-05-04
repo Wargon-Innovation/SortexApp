@@ -66,7 +66,7 @@ namespace SortexApp.ViewModels
                 UpdateOrder(order);
             }
 
-            _oldOrder = order;
+            
 
         }
 
