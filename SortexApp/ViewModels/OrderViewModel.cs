@@ -12,6 +12,8 @@ namespace SortexApp.ViewModels
 {
     public class OrderViewModel : INotifyPropertyChanged
     {
+        private Order _oldOrder;
+
         public ObservableCollection<Order> OrderList { get; set; } = new ObservableCollection<Order>();
         internal async System.Threading.Tasks.Task LoadOrderAsync()
         {
@@ -38,6 +40,43 @@ namespace SortexApp.ViewModels
                 await Application.Current.MainPage.DisplayAlert("Error", "Connection unstable (" + ex.Message + ")", "Cancel");
             }
         }
+
+        public void HideOrShowOrder(Order order)
+        {
+            order.isVisible = true;
+
+            UpdateOrder(order);
+
+            if(_oldOrder == order)
+            {
+                //Klicka två gånger för att gömma
+                order.isVisible = !order.isVisible;
+                UpdateOrder(order);
+            }
+            else
+            {
+                if(_oldOrder != null)
+                {
+                    //Göm föregående objekt
+                    _oldOrder.isVisible = false;
+                    UpdateOrder(_oldOrder);
+                }
+                //show selected item
+                order.isVisible = true;
+                UpdateOrder(order);
+            }
+
+            _oldOrder = order;
+
+        }
+
+        private void UpdateOrder(Order order)
+        {
+            var index = OrderList.IndexOf(order);
+            OrderList.Remove(order);
+            OrderList.Insert(index, order);
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
 

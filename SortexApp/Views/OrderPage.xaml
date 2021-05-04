@@ -12,19 +12,25 @@
     
     <ContentPage.Content>
         <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource Background}">
-            <ListView ItemsSource="{Binding OrderList}">
+            <ListView ItemsSource="{Binding OrderList}" HasUnevenRows="True" Margin="40,80" ItemTapped="ListView_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Frame IsClippedToBounds="True" HasShadow="True" Padding="0" Margin="0,40,0,10" BorderColor="White" BackgroundColor="{StaticResource Accent}">
+                            <StackLayout>
+                                <Label Text="{Binding Name}" TextColor="White" FontSize="Large"></Label>
+                                <Label Text="{Binding Description}" IsVisible="{Binding isVisible}" TextColor="White"></Label>
+                            </StackLayout>
+
+
+                            <!--<Frame IsClippedToBounds="True" HasShadow="True" Padding="0" Margin="0,40,0,10" BorderColor="White" BackgroundColor="{StaticResource Accent}">
                                 <StackLayout Padding="0" HeightRequest="100">
                                     <Label Text="{Binding Name}"  FontSize="Medium" HorizontalOptions="Center" TextColor="White"></Label>
                                     
-                                    <Label Text="{Binding Description}" MaxLines="1" LineBreakMode="TailTruncation"  HorizontalOptions="Center" TextColor="White"></Label>
+                                    <Label Text="{Binding Description}"  HorizontalOptions="Center" TextColor="White"></Label>
                                 </StackLayout>
-                            </Frame>
+                            </Frame>-->
 
-                            
+                            <!--MaxLines="1" LineBreakMode="TailTruncation"-->
 
                             <!--<Grid Padding="4" Margin="4">
                                 <Grid.ColumnDefinitions>
