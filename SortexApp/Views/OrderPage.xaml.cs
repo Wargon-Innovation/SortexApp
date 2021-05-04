@@ -18,7 +18,6 @@ namespace SortexApp.Views
             InitializeComponent();
             BindingContext = App.Order;
             Title = "Order";
-        
         }
 
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)

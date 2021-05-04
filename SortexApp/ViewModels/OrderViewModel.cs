@@ -61,7 +61,7 @@ namespace SortexApp.ViewModels
                     _oldOrder.isVisible = false;
                     UpdateOrder(_oldOrder);
                 }
-                //show selected item
+                //Visa valt objekt
                 order.isVisible = true;
                 UpdateOrder(order);
             }

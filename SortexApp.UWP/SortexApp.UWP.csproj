@@ -139,6 +139,8 @@
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="sortexiconblue.png" />
     <Content Include="sortextransparent.png" />
+    <Content Include="sorticon.png" />
+    <Content Include="sorticonaccent.png" />
     <Content Include="trendicon.png" />
     <Content Include="xamarin_logo.png" />
     <Content Include="icon_about.png" />

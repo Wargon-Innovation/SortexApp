@@ -1,11 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SortexApp.Views.FractionPage">
+             xmlns:vm="clr-namespace:SortexApp.ViewModels"
+             x:Class="SortexApp.Views.FractionPage"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:FractionViewModel />
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Fraktioner"
-                />
+        <Grid BackgroundColor="{StaticResource Background}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                        <Image Source="sortexiconblue.png"  VerticalOptions="Center" HeightRequest="64" />
+                    </ContentView>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Orientation="Horizontal" BackgroundColor="{StaticResource Background}">
+                <ListView ItemsSource="{Binding FractionList}" HasUnevenRows="True" Margin="40,80" ItemTapped="ListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Number}" TextColor="White" FontSize="Large"></Label>
+                                <Label Text="{Binding Name}" TextColor="White" FontSize="Medium"></Label>
+                                <Label Text="{Binding Description}" IsVisible="{Binding IsVisible}" TextColor="White"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
         </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
