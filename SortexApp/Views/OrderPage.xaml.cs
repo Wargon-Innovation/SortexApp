@@ -17,7 +17,7 @@ namespace SortexApp.Views
         {
             InitializeComponent();
             BindingContext = App.Order;
-
+            Title = "Order";
         
         }
 

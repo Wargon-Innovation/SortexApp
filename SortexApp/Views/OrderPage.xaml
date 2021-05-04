@@ -3,27 +3,41 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:SortexApp.ViewModels"
-             x:Class="SortexApp.Views.OrderPage">
-
+             x:Class="SortexApp.Views.OrderPage"
+             Title="{Binding Title}">
 
     <ContentPage.BindingContext>
         <vm:OrderViewModel />
     </ContentPage.BindingContext>
-    
+   
     <ContentPage.Content>
-        <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource Background}">
-            <ListView ItemsSource="{Binding OrderList}" HasUnevenRows="True" Margin="40,80" ItemTapped="ListView_ItemTapped">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout>
-                                <Label Text="{Binding Name}" TextColor="White" FontSize="Large"></Label>
-                                <Label Text="{Binding Description}" IsVisible="{Binding isVisible}" TextColor="White"></Label>
-                                <Label Text="{Binding Start}" IsVisible="{Binding isVisible}" TextColor="White"></Label>
-                            </StackLayout>
+        <Grid BackgroundColor="{StaticResource Background}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource Background}"  HorizontalOptions="Center" VerticalOptions="Center">
+                    <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                        <Image Source="sortexiconblue.png"  VerticalOptions="Center" HeightRequest="64" />
+                    </ContentView>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Orientation="Horizontal" BackgroundColor="{StaticResource Background}">
+                <ListView ItemsSource="{Binding OrderList}" HasUnevenRows="True" Margin="40,80" ItemTapped="ListView_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Label Text="{Binding Name}" TextColor="White" FontSize="Large"></Label>
+                                    <Label Text="{Binding Description}" IsVisible="{Binding isVisible}" TextColor="White"></Label>
+                                    <Label Text="{Binding Start}" IsVisible="{Binding isVisible}" TextColor="White"></Label>
+                                </StackLayout>
 
 
-                            <!--<Frame IsClippedToBounds="True" HasShadow="True" Padding="0" Margin="0,40,0,10" BorderColor="White" BackgroundColor="{StaticResource Accent}">
+                                <!--<Frame IsClippedToBounds="True" HasShadow="True" Padding="0" Margin="0,40,0,10" BorderColor="White" BackgroundColor="{StaticResource Accent}">
                                 <StackLayout Padding="0" HeightRequest="100">
                                     <Label Text="{Binding Name}"  FontSize="Medium" HorizontalOptions="Center" TextColor="White"></Label>
                                     
@@ -31,9 +45,9 @@
                                 </StackLayout>
                             </Frame>-->
 
-                            <!--MaxLines="1" LineBreakMode="TailTruncation"-->
+                                <!--MaxLines="1" LineBreakMode="TailTruncation"-->
 
-                            <!--<Grid Padding="4" Margin="4">
+                                <!--<Grid Padding="4" Margin="4">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width=".5*" />
                                     <ColumnDefinition Width=".5" />
@@ -55,10 +69,13 @@
 
                             </Grid>-->
 
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
+    
 </ContentPage>
+    
