@@ -30,12 +30,13 @@
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout Margin="0,0,0,10">
-                                    <Frame VerticalOptions="Center" BackgroundColor="{StaticResource Accent}" BorderColor="White" HasShadow="True" HeightRequest="40">
+                                    <Frame VerticalOptions="Center" BackgroundColor="{StaticResource Background}" BorderColor="{StaticResource Primary}" HasShadow="True" HeightRequest="40">
                                         <Label Text="{Binding Name}" TextColor="White" FontSize="Large"></Label>
                                     </Frame>
-                                    
-                                    <Label Text="{Binding Description}" IsVisible="{Binding isVisible}" TextColor="White" BackgroundColor="{StaticResource Accent}"></Label>
-                                    <Label Text="{Binding Start}" IsVisible="{Binding isVisible}" TextColor="White"></Label>
+                                    <Frame BackgroundColor="{StaticResource Background}" BorderColor="{StaticResource Primary}" IsVisible="{Binding isVisible}" VerticalOptions="Center" HasShadow="True">
+                                        <Label Text="{Binding Description}" IsVisible="{Binding isVisible}" TextColor="White" BackgroundColor="{StaticResource Background}"></Label>
+                                    </Frame>
+                                    <!--<Label Text="{Binding Start}" IsVisible="{Binding isVisible}" TextColor="White"></Label>-->
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
