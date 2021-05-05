@@ -25,16 +25,25 @@
             </StackLayout>
 
             <StackLayout Grid.Row="1" Orientation="Horizontal" BackgroundColor="{StaticResource Background}">
-                <ListView ItemsSource="{Binding FractionList}" HasUnevenRows="True" Margin="40,80" ItemTapped="ListView_ItemTapped">
+                <ListView ItemsSource="{Binding FractionList}" HasUnevenRows="True" Margin="60,20,40,0" ItemTapped="ListView_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout>
-                                <Label Text="{Binding Number}" TextColor="White" FontSize="Large"></Label>
-                                <Label Text="{Binding Name}" TextColor="White" FontSize="Medium"></Label>
-                                <Label Text="{Binding Description}" IsVisible="{Binding IsVisible}" TextColor="White"></Label>
-                            </StackLayout>
-                        </ViewCell>
+                                <StackLayout Margin="0,0,0,10">
+                                    <Frame BackgroundColor="{StaticResource Background}" BorderColor="{StaticResource Primary}" HasShadow="True" HeightRequest="40" Margin="0">
+                                        <StackLayout Orientation="Horizontal" >
+                                            <Label Text="{Binding Number}" TextColor="White" FontSize="Large" FontAttributes="Bold"></Label>
+                                            <Label Text="{Binding Name}" TextColor="White" FontSize="Large" FontAttributes="Bold"></Label>
+                                        </StackLayout>
+                                    </Frame>
+                                    <Frame BackgroundColor="{StaticResource Background}" IsVisible="{Binding IsVisible}" BorderColor="{StaticResource Primary}" VerticalOptions="Center" HasShadow="True" Margin="0">
+                                        <Label Text="{Binding Description}" IsVisible="{Binding IsVisible}" TextColor="White"></Label>
+                                    </Frame>
+                                    
+                                </StackLayout>
+                            
+                                
+                            </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
