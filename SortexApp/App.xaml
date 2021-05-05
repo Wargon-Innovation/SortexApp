@@ -11,9 +11,15 @@
             <Color x:Key="Secondary">#696d6a</Color>
             <Color x:Key="Background">#333</Color>
             <Color x:Key="Accent">#03989e</Color>
-        
-        <Style TargetType="Button">
+            <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Bahnschrift SemiBold"></Setter>
+             <Setter Property="FontSize" Value="Medium"></Setter>
+            </Style>
+            
+
+            <Style TargetType="Button">
                 <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="Text" Value="20"></Setter>
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">
