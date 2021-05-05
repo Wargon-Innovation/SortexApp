@@ -25,13 +25,16 @@
             </StackLayout>
 
             <StackLayout Grid.Row="1" Orientation="Horizontal" BackgroundColor="{StaticResource Background}">
-                <ListView ItemsSource="{Binding OrderList}" HasUnevenRows="True" Margin="40,80" ItemTapped="ListView_ItemTapped">
+                <ListView ItemsSource="{Binding OrderList}" HasUnevenRows="True" Margin="60,20,40,0" ItemTapped="ListView_ItemTapped">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout>
-                                    <Label Text="{Binding Name}" TextColor="White" FontSize="Large"></Label>
-                                    <Label Text="{Binding Description}" IsVisible="{Binding isVisible}" TextColor="White"></Label>
+                                <StackLayout Margin="0,0,0,10">
+                                    <Frame VerticalOptions="Center" BackgroundColor="{StaticResource Accent}" BorderColor="White" HasShadow="True" HeightRequest="40">
+                                        <Label Text="{Binding Name}" TextColor="White" FontSize="Large"></Label>
+                                    </Frame>
+                                    
+                                    <Label Text="{Binding Description}" IsVisible="{Binding isVisible}" TextColor="White" BackgroundColor="{StaticResource Accent}"></Label>
                                     <Label Text="{Binding Start}" IsVisible="{Binding isVisible}" TextColor="White"></Label>
                                 </StackLayout>
                             </ViewCell>

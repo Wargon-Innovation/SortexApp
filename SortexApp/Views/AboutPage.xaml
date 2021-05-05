@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SortexApp.Views.AboutPage"
+             xmlns:local="clr-namespace:SortexApp.Views"
              xmlns:vm="clr-namespace:SortexApp.ViewModels"
              Title="{Binding Title}">
     
@@ -28,13 +29,12 @@
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
                 
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Button  BorderWidth="5" BorderColor="{StaticResource Accent}" Margin="0,20,20,0" Text="Fraktioner" CornerRadius="10" x:Name="btnFraction" Clicked="btnFraction_Clicked" 
-                        Command="{Binding }"
+                    <Button  BorderWidth="5" BorderColor="{StaticResource Accent}" Margin="0,20,20,0" Text="Fraktioner" x:Name="btnFraction" Clicked="BtnFraction_Clicked"  Routing.Route="FractionPage" CornerRadius="10"
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White" 
                             WidthRequest="140"
                             HeightRequest="130"/>
-                    <Button BorderWidth="5" BorderColor="{StaticResource Accent}" Margin="0,20,0,0" x:Name="btnOrder" Text="Order" Clicked="btnOrder_Clicked" CornerRadius="10" 
+                    <Button BorderWidth="5" BorderColor="{StaticResource Accent}" Margin="0,20,0,0" x:Name="btnOrder" Text="Order" Clicked="BtnOrder_Clicked"  Routing.Route="OrderPage" CornerRadius="10" 
                         BackgroundColor="{StaticResource Primary}"                            
                         TextColor="White"
                             WidthRequest="140"

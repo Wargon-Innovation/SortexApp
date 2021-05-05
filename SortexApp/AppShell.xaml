@@ -3,7 +3,9 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:SortexApp.Views"
        Title="SortexApp"
-       x:Class="SortexApp.AppShell">
+       x:Class="SortexApp.AppShell"
+       FlyoutBackgroundColor="{StaticResource Background}">
+        
 
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
@@ -17,10 +19,10 @@
                 <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
                 <Setter Property="Shell.ForegroundColor" Value="{StaticResource Secondary }" />
                 <Setter Property="Shell.TitleColor" Value="White" />
-                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
-                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.DisabledColor" Value="{StaticResource Background}" />
+                <Setter Property="Shell.UnselectedColor" Value="{StaticResource Background}" />
                 <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
-                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarForegroundColor" Value="black"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="White"/>
             </Style>
@@ -31,6 +33,7 @@
             Default Styles for all Flyout Items
             https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/flyout#flyoutitem-and-menuitem-style-classes
             -->
+          
             <Style Class="FlyoutItemLabelStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="White"></Setter>
             </Style>
@@ -40,7 +43,7 @@
                         <VisualStateGroup x:Name="CommonStates">
                             <VisualState x:Name="Normal">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{x:OnPlatform UWP=Transparent, iOS=White}" />
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Background}"></Setter>
                                     <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource Primary}" />
                                 </VisualState.Setters>
                             </VisualState>
@@ -87,9 +90,23 @@
     <FlyoutItem Title="Order" Icon="ordericon.png">
         <ShellContent Route="OrderPage" ContentTemplate="{DataTemplate local:OrderPage}" />
     </FlyoutItem>
-    
-    
-    
+    <!--<FlyoutItem Title="Moodboard" Icon="modeboardicon.png">
+        <ShellContent Route="OrderPage" ContentTemplate="{DataTemplate local:OrderPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Trender" Icon="trendicon.png">
+        <ShellContent Route="OrderPage" ContentTemplate="{DataTemplate local:OrderPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Märken" Icon="brandicon.png">
+        <ShellContent Route="OrderPage" ContentTemplate="{DataTemplate local:OrderPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Viktigt att tänka på" Icon="assignmenticon.png">
+        <ShellContent Route="OrderPage" ContentTemplate="{DataTemplate local:OrderPage}" />
+    </FlyoutItem>-->
+
+
+
+
+
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
     <MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">

@@ -8,26 +8,28 @@ namespace SortexApp.Views
 {
     public partial class AboutPage : ContentPage
     {
-        static public OrderViewModel Order { get; set; } = new OrderViewModel();
+        //static public OrderViewModel Order { get; set; } = new OrderViewModel();
         public AboutPage()
         {
             InitializeComponent();
-            
+            Title = "Hem";
         }
 
-        private async void btnFraction_Clicked(object sender, EventArgs e)
+        private async void BtnFraction_Clicked(object sender, EventArgs e)
         {
-            FractionPage fractionPage = new FractionPage();
-            await Navigation.PushAsync(fractionPage);
+            //FractionPage fractionPage = new FractionPage();
+            //await Navigation.PushAsync(fractionPage);
+            await Shell.Current.GoToAsync($"//{nameof(FractionPage)}");
+
         }
 
-        private async void btnOrder_Clicked(object sender, EventArgs e)
+        private async void BtnOrder_Clicked(object sender, EventArgs e)
         {
-                       
-            OrderPage orderPage = new OrderPage();            
-            await Navigation.PushAsync(orderPage);
-            
-           
+
+            //OrderPage orderPage = new OrderPage();            
+            //await Navigation.PushAsync(orderPage);
+            await Shell.Current.GoToAsync($"//{nameof(OrderPage)}");
+
         }
     }
 }

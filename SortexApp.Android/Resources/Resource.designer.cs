@@ -11824,7 +11824,10 @@ namespace SortexApp.Droid
 			public const int trendicon = 2131165339;
 			
 			// aapt resource value: 0x7F07009C
-			public const int xamarin_logo = 2131165340;
+			public const int wargonHeader = 2131165340;
+			
+			// aapt resource value: 0x7F07009D
+			public const int xamarin_logo = 2131165341;
 			
 			static Drawable()
 			{
