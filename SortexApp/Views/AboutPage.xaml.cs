@@ -19,6 +19,7 @@ namespace SortexApp.Views
         {
             //FractionPage fractionPage = new FractionPage();
             //await Navigation.PushAsync(fractionPage);
+            await App.Fraction.LoadFractionAsync();
             await Shell.Current.GoToAsync($"//{nameof(FractionPage)}");
 
         }

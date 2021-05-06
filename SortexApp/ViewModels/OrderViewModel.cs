@@ -45,9 +45,9 @@ namespace SortexApp.ViewModels
         {
             order.isVisible = true;
 
-            UpdateOrder(order);
+                UpdateOrder(order);
 
-            if(_oldOrder == order)
+            if (_oldOrder == order)
             {
                 //Klicka två gånger för att gömma
                 order.isVisible = !order.isVisible;
@@ -55,7 +55,7 @@ namespace SortexApp.ViewModels
             }
             else
             {
-                if(_oldOrder != null)
+                if (_oldOrder != null)
                 {
                     //Göm föregående objekt
                     _oldOrder.isVisible = false;
@@ -67,15 +67,21 @@ namespace SortexApp.ViewModels
             }
 
             _oldOrder = order;
-            
+
 
         }
 
         private void UpdateOrder(Order order)
         {
+
             var index = OrderList.IndexOf(order);
-            OrderList.Remove(order);
-            OrderList.Insert(index, order);
+            if(index != -1)
+            {
+                OrderList.Remove(order);
+                OrderList.Insert(index, order);
+            }
+            return;
+           
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

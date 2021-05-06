@@ -72,8 +72,12 @@ namespace SortexApp.ViewModels
         private void UpdateFraction(Fraction fraction)
         {
             var index = FractionList.IndexOf(fraction);
-            FractionList.Remove(fraction);
-            FractionList.Insert(index, fraction);
+            if(index != -1)
+            {
+                FractionList.Remove(fraction);
+                FractionList.Insert(index, fraction);
+            }
+            return;
         }
 
 
