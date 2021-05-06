@@ -33,15 +33,16 @@
                     <Button BorderWidth="5" BorderColor="{StaticResource Accent}" Margin="0,20,100,0" Text="Fraktioner" x:Name="btnFraction" Clicked="BtnFraction_Clicked"  Routing.Route="FractionPage" CornerRadius="10"
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White" 
-                            WidthRequest="140"
+                            WidthRequest="250"
                             HeightRequest="130"
                              ImageSource="fractionicon.png"
                             />
                     <Button BorderWidth="5" BorderColor="{StaticResource Accent}" Margin="0,20,0,0" x:Name="btnOrder" Text="Order" Clicked="BtnOrder_Clicked"  Routing.Route="OrderPage" CornerRadius="10" 
                         BackgroundColor="{StaticResource Primary}"                            
                         TextColor="White"
-                            WidthRequest="140"
-                            HeightRequest="130"/>
+                            WidthRequest="250"
+                            HeightRequest="130"
+                            ImageSource="ordericon.png"/>
                 </StackLayout>
 
                 <StackLayout  Orientation="Horizontal" HorizontalOptions="Center">
@@ -51,7 +52,8 @@
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White"
                         WidthRequest="140"
-                        HeightRequest="130"/>
+                        HeightRequest="130"
+                            ImageSource="brandicon.png"/>
                     <Button BorderWidth="5" BorderColor="{StaticResource Accent}"  Margin="0,20,0,0" Text="MoodBoard" CornerRadius="10" 
                         Command="{Binding }"
                         BackgroundColor="{StaticResource Primary}"

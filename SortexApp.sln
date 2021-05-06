@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortexApp.UWP", "SortexApp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortexApp.Android", "SortexApp.Android\SortexApp.Android.csproj", "{D7CFC428-08E6-4C17-AF0B-C92AB076492C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortexApp", "SortexApp\SortexApp.csproj", "{115A3D89-5328-45BB-8135-B6E754FA46E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortexApp", "SortexApp\SortexApp.csproj", "{115A3D89-5328-45BB-8135-B6E754FA46E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
