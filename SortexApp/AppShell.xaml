@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms" 
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:local="clr-namespace:SortexApp.Views"
+       xmlns:local="clr-namespace:SortexApp.Views" xmlns:Controls="clr-namespace:SortexApp.Controls"
        Title="SortexApp"
        x:Class="SortexApp.AppShell"
        FlyoutBackgroundColor="{StaticResource Background}">
@@ -81,6 +81,11 @@
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
+    
+    <Shell.FlyoutHeader>
+        <Controls:FlyoutHeader />
+    </Shell.FlyoutHeader>
+    
     <FlyoutItem Title="Hem" Icon="sorticonaccent.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
     </FlyoutItem>

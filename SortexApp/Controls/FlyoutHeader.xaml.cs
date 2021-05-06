@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace SortexApp.Common
+namespace SortexApp.Controls
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FlyOutHeaderTemplate : Grid
+    public partial class FlyoutHeader : ContentView
     {
-        public FlyOutHeaderTemplate()
+        public FlyoutHeader()
         {
             InitializeComponent();
         }
