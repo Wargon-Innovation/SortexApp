@@ -19,7 +19,7 @@
 
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="Blue" ></Setter>
-                <Setter Property="FontSize" Value="20"></Setter>
+                <Setter Property="FontSize" Value="15"></Setter>
                 <Setter Property="FontFamily" Value="20"></Setter>
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
