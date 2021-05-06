@@ -28,6 +28,7 @@ namespace SortexApp.Views
 
             //OrderPage orderPage = new OrderPage();            
             //await Navigation.PushAsync(orderPage);
+            await App.Order.LoadOrderAsync();
             await Shell.Current.GoToAsync($"//{nameof(OrderPage)}");
 
         }
