@@ -15,7 +15,7 @@
             <Setter Property="FontFamily" Value="Bahnschrift SemiBold"></Setter>
              <Setter Property="FontSize" Value="Medium"></Setter>
             </Style>
-            
+           
 
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="Blue" ></Setter>

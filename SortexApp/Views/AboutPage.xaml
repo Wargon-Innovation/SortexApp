@@ -4,13 +4,14 @@
              x:Class="SortexApp.Views.AboutPage"
              xmlns:local="clr-namespace:SortexApp.Views"
              xmlns:vm="clr-namespace:SortexApp.ViewModels"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
              Title="{Binding Title}">
     
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
-    
-      
+
+   
 
     <Grid BackgroundColor="{StaticResource Background}">
         <Grid.RowDefinitions>
@@ -24,25 +25,26 @@
                 </ContentView>
             </StackLayout>
         </StackLayout>
-        
+
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
                 
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                     
-                    <Button BorderWidth="5" BorderColor="{StaticResource Accent}" ContentLayout="Top,0"  Margin="0,20,20,0" Text="Fraktioner" x:Name="btnFraction" Clicked="BtnFraction_Clicked"  Routing.Route="FractionPage" CornerRadius="10"
+                    <Button BorderWidth="5" BorderColor="{StaticResource Accent}" Margin="0,20,20,0" Text="Fraktioner" x:Name="btnFraction" Clicked="BtnFraction_Clicked"  Routing.Route="FractionPage" CornerRadius="10"
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White" 
-                            WidthRequest="230"
+                            WidthRequest="270"
                             HeightRequest="130"
                              ImageSource="fractionicon.png"
                             />
                     <Button BorderWidth="5" BorderColor="{StaticResource Accent}" Margin="0,20,0,0" x:Name="btnOrder" Text="Order" Clicked="BtnOrder_Clicked"  Routing.Route="OrderPage" CornerRadius="10" 
                         BackgroundColor="{StaticResource Primary}"                            
                         TextColor="White"
-                            WidthRequest="230"
+                            WidthRequest="270"
                             HeightRequest="130"
-                            ImageSource="ordericon.png"/>
+                            ImageSource="ordericon.png"
+                            />
                 </StackLayout>
 
                 <StackLayout  Orientation="Horizontal" HorizontalOptions="Center">
@@ -51,14 +53,14 @@
                         Command="{Binding }"
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White"
-                        WidthRequest="230"
+                        WidthRequest="270"
                         HeightRequest="130"
                             ImageSource="trendicon.png"/>
                     <Button BorderWidth="5" BorderColor="{StaticResource Accent}"  Margin="0,20,0,0" Text="MoodBoard" CornerRadius="10" 
                         Command="{Binding }"
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White"
-                        WidthRequest="230"
+                        WidthRequest="270"
                         HeightRequest="130"
                             ImageSource="modeboardicon.png"
                         />
@@ -68,18 +70,19 @@
                         Command="{Binding }"
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White"
-                        WidthRequest="230"
+                        WidthRequest="270"
                         HeightRequest="130"
                             ImageSource="brandicon.png"/>
-                    <Button BorderWidth="5" BorderColor="{StaticResource Accent}" Margin="0,20,0,0" Text="Arbetsuppgifter" CornerRadius="10"
+                    <Button BorderWidth="5" BorderColor="{StaticResource Accent}" Margin="0,20,0,0" Text="Att tänka på" CornerRadius="10"
                         Command="{Binding }"
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White"
-                        WidthRequest="230"
+                        WidthRequest="270"
                         HeightRequest="130"
                             ImageSource="assignmenticon.png"/>
                 </StackLayout>
             </StackLayout>
+            
         </ScrollView>
     </Grid>
 
