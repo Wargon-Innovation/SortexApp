@@ -13,6 +13,8 @@ namespace SortexApp
         static public OrderViewModel Order { get; set; } = new OrderViewModel();
         static public FractionViewModel Fraction { get; set; } = new FractionViewModel();
         static public TrendViewModel Trend { get; set; } = new TrendViewModel();
+        
+
 
         public App()
         {

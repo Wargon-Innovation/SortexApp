@@ -95,6 +95,9 @@
     <FlyoutItem Title="Order" Icon="ordericon.png">
         <ShellContent Route="OrderPage" ContentTemplate="{DataTemplate local:OrderPage}" />
     </FlyoutItem>
+    <FlyoutItem Title="Trend" Icon="trendicon.png">
+        <ShellContent Route="TrendPage" ContentTemplate="{DataTemplate local:TrendPage}" />
+    </FlyoutItem>
     <!--<FlyoutItem Title="Moodboard" Icon="modeboardicon.png">
         <ShellContent Route="OrderPage" ContentTemplate="{DataTemplate local:OrderPage}" />
     </FlyoutItem>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SortexApp.Views.TrendPage"
+             xmlns:vm="clr-namespace:SortexApp.ViewModels">
+
+    <ContentPage.BindingContext>
+        <vm:TrendViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="lstTrendImages" ItemsSource="{Binding TrendImageViewList}" ItemTapped="lstTrendImages_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Season}" TextColor="DarkGreen"></Label>
+                                <Label Text="{Binding Id}" TextColor="Green"></Label>
+                                <Button Text="Visa bilder" Clicked="btnTrendDetails_Clicked"></Button>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
