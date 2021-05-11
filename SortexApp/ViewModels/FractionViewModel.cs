@@ -69,6 +69,7 @@ namespace SortexApp.ViewModels
             _oldfraction = fraction;
         }
 
+        //Kolla mot index i listan vilket objekt som blir valt
         private void UpdateFraction(Fraction fraction)
         {
             var index = FractionList.IndexOf(fraction);

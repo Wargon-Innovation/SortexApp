@@ -94,7 +94,7 @@ namespace SortexApp.ViewModels
                         {
                             if(image.Id == imageMM.TrendImageId)
                             {
-                                trendImageView.TrendImages.Add(image.Image);
+                                trendImageView.TrendImages.Add(image);
                             }
                         }
                     }
@@ -117,6 +117,8 @@ namespace SortexApp.ViewModels
         }
 
         
+
+        //toggle
         internal void HideOrShowTrends(TrendImageView trend)
         {
             trend.IsVisible = true;
@@ -146,7 +148,13 @@ namespace SortexApp.ViewModels
 
         private void UpdateTrend(TrendImageView trend)
         {
-            throw new NotImplementedException();
+            var index = TrendImageViewList.IndexOf(trend);
+            if (index != -1)
+            {
+                TrendImageViewList.Remove(trend);
+                TrendImageViewList.Insert(index, trend);
+            }
+            return;
         }
     }
 }

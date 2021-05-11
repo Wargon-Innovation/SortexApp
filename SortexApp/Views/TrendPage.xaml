@@ -2,28 +2,53 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SortexApp.Views.TrendPage"
-             xmlns:vm="clr-namespace:SortexApp.ViewModels">
+             xmlns:vm="clr-namespace:SortexApp.ViewModels"
+             Title="{Binding Title}">
 
     <ContentPage.BindingContext>
         <vm:TrendViewModel />
     </ContentPage.BindingContext>
-    
+
     <ContentPage.Content>
-        <StackLayout>
-            <ListView x:Name="lstTrendImages" ItemsSource="{Binding TrendImageViewList}" ItemTapped="lstTrendImages_ItemTapped">
+        <Grid BackgroundColor="{StaticResource Background}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                        <Image Source="sortexiconblue.png"  VerticalOptions="Center" HeightRequest="64" />
+                    </ContentView>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Orientation="Horizontal" BackgroundColor="{StaticResource Background}">
+                <ListView x:Name="lstTrendImages" ItemsSource="{Binding TrendImageViewList}" ItemTapped="lstTrendImages_ItemTapped" HasUnevenRows="True" Margin="60,20,40,0">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout>
-                                <Label Text="{Binding Season}" TextColor="DarkGreen"></Label>
-                                <Label Text="{Binding Id}" TextColor="Green"></Label>
-                                <Button Text="Visa bilder" Clicked="btnTrendDetails_Clicked"></Button>
-                            </StackLayout>
-                        </ViewCell>
+                                <StackLayout Margin="0,0,0,10">
+                                    <Frame BackgroundColor="{StaticResource Background}" BorderColor="{StaticResource Primary}" HasShadow="True" HeightRequest="40" Margin="0">
+                                        <StackLayout Orientation="Horizontal" >
+                                            <Label Text="{Binding Id}" TextColor="White" FontSize="Large" FontAttributes="Bold"></Label>
+                                            <Label Text="{Binding Season}" TextColor="White" FontSize="Large" FontAttributes="Bold"></Label>
+                                            
+                                        </StackLayout>
+                                    </Frame>
+                                    <Frame BackgroundColor="{StaticResource Background}" IsVisible="{Binding IsVisible}" BorderColor="{StaticResource Primary}" VerticalOptions="Center" HasShadow="True" Margin="0">
+                                        
+                                        <Button Text="Visa alla bilder" IsVisible="{Binding IsVisible}" Background="{StaticResource Primary}" x:Name="btnImage" Clicked="BtnImage_Clicked" Routing.Route="TrendDetailsPage" BindingContext="{Binding Id}"></Button>
+                                    </Frame>
+
+                                </StackLayout>
+                            </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
             
-        </StackLayout>
+            </StackLayout>
+         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -85,6 +85,9 @@
     <Shell.FlyoutHeader>
         <Controls:FlyoutHeader />
     </Shell.FlyoutHeader>
+
+ 
+    
     
     <FlyoutItem Title="Hem" Icon="sorticonaccent.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
@@ -110,7 +113,7 @@
     <FlyoutItem Title="Viktigt att tänka på" Icon="assignmenticon.png">
         <ShellContent Route="OrderPage" ContentTemplate="{DataTemplate local:OrderPage}" />
     </FlyoutItem>-->
-
+    
 
 
 
@@ -128,7 +131,8 @@
         await Shell.Current.GoToAsync("//LoginPage");
     -->
     <TabBar>
-        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}"></ShellContent>
+        <ShellContent Route="TrendDetailsPage" ContentTemplate="{DataTemplate local:TrendDetailsPage}"/>
     </TabBar>
 
     <!-- Optional Templates 
