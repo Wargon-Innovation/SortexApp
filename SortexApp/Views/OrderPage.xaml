@@ -40,9 +40,10 @@
                                     </Frame>
                                     <Frame BackgroundColor="{StaticResource Background}" BorderColor="{StaticResource Primary}" IsVisible="{Binding isVisible}" VerticalOptions="Center" HasShadow="True" Margin="0">
                                         <StackLayout>
-                                            <Label Text="Beskrivning" FontAttributes="Bold" IsVisible="{Binding isVisible}"></Label>
-                                        <Label Text="{Binding Description}" IsVisible="{Binding isVisible}"  TextColor="White" BackgroundColor="{StaticResource Background}"></Label>
-                                            <Label Text="{Binding GetDate}" Margin="0,20,0,0" FontSize="15" IsVisible="{Binding isVisible}" TextColor="White"></Label>
+                                            <Label Text="{Binding GetDate}" TextColor="{StaticResource Accent}" FontAttributes="Italic" FontSize="Small" HorizontalOptions="Center"></Label>
+                                            <Label Text="Beskrivning" FontAttributes="Bold" IsVisible="{Binding isVisible}" TextColor="White" TextDecorations="Underline"></Label>
+                                            <Label Text="{Binding Description}" IsVisible="{Binding isVisible}"  TextColor="White" BackgroundColor="{StaticResource Background}"></Label>
+                                            
                                         </StackLayout>
                                     </Frame>
                                    

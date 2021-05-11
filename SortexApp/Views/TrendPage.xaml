@@ -39,7 +39,15 @@
                                     </Frame>
                                     <Frame BackgroundColor="{StaticResource Background}" IsVisible="{Binding IsVisible}" BorderColor="{StaticResource Primary}" VerticalOptions="Center" HasShadow="True" Margin="0">
                                         
-                                        <Button Text="Visa alla bilder" IsVisible="{Binding IsVisible}" Background="{StaticResource Primary}" x:Name="btnImage" Clicked="BtnImage_Clicked" Routing.Route="TrendDetailsPage" BindingContext="{Binding Id}"></Button>
+                                        <Button Text="Visa alla bilder" IsVisible="{Binding IsVisible}" Background="{StaticResource Primary}"
+                                                x:Name="btnImage"
+                                                Clicked="BtnImage_Clicked"
+                                                Routing.Route="TrendDetailsPage" 
+                                                BindingContext="{Binding Id}"
+                                                CornerRadius="20"
+                                                Padding="10"
+                                                Margin="10"
+                                                FontSize="Medium"></Button>
                                     </Frame>
 
                                 </StackLayout>
