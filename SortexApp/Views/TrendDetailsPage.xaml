@@ -14,6 +14,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
+                
             </Grid.RowDefinitions>
 
             <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
@@ -25,19 +26,24 @@
             </StackLayout>
 
             <StackLayout Grid.Row="1" Orientation="Horizontal" BackgroundColor="{StaticResource Background}">
-            <Label Text="{Binding Id}"></Label> 
-            <ListView ItemsSource="{Binding TrendImages}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout>
-                                <Image Source="{Binding FilePath}"></Image>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+            
+                <ListView ItemsSource="{Binding TrendImages}" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout VerticalOptions="Fill" BackgroundColor="Transparent" Padding="0,25">
+                                    <Image x:Name="imgMain" Source="{Binding Image}"  WidthRequest="100" HeightRequest="250" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+
+                                    <!--<Image x:Name="imgSub" Source="{Binding LVSubImage}" Aspect="AspectFit" WidthRequest="50"
+                                      HeightRequest="75" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
+                                    <Label LineHeight="0.8" Text="{Binding Title}" VerticalTextAlignment="Start" TextColor="Black" FontSize="14"/>-->
+                                </StackLayout>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
          </Grid>
     </ContentPage.Content>
 </ContentPage>

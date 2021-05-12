@@ -32,14 +32,15 @@
                                 <StackLayout Margin="0,0,0,10">
                                     <Frame BackgroundColor="{StaticResource Background}" BorderColor="{StaticResource Primary}" HasShadow="True" HeightRequest="40" Margin="0">
                                         <StackLayout Orientation="Horizontal" >
-                                            <Label Text="{Binding Id}" TextColor="White" FontSize="Large" FontAttributes="Bold"></Label>
+                                        
                                             <Label Text="{Binding Season}" TextColor="White" FontSize="Large" FontAttributes="Bold"></Label>
                                             
                                         </StackLayout>
                                     </Frame>
                                     <Frame BackgroundColor="{StaticResource Background}" IsVisible="{Binding IsVisible}" BorderColor="{StaticResource Primary}" VerticalOptions="Center" HasShadow="True" Margin="0">
-                                        
-                                        <Button Text="Visa alla bilder" IsVisible="{Binding IsVisible}" Background="{StaticResource Primary}"
+                                        <StackLayout>
+                                            <Label Text="{Binding Description}" TextColor="White" FontSize="Medium" IsVisible="{Binding IsVisible}"></Label>
+                                            <Button Text="Visa alla bilder" IsVisible="{Binding IsVisible}" Background="{StaticResource Primary}"
                                                 x:Name="btnImage"
                                                 Clicked="BtnImage_Clicked"
                                                 Routing.Route="TrendDetailsPage" 
@@ -48,6 +49,8 @@
                                                 Padding="10"
                                                 Margin="10"
                                                 FontSize="Medium"></Button>
+                                        </StackLayout>
+                                        
                                     </Frame>
 
                                 </StackLayout>

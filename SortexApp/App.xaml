@@ -11,6 +11,7 @@
             <Color x:Key="Secondary">#696d6a</Color>
             <Color x:Key="Background">#333</Color>
             <Color x:Key="Accent">#03989e</Color>
+            <Color x:Key="textcolor">#B0EFF3</Color>
             <Style TargetType="Label">
             <Setter Property="FontFamily" Value="Bahnschrift SemiBold"></Setter>
              <Setter Property="FontSize" Value="Medium"></Setter>
