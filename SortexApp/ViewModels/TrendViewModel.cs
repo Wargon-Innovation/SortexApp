@@ -85,6 +85,7 @@ namespace SortexApp.ViewModels
                 trendImageView.Season = trend.Season;
                 trendImageView.Description = trend.Description;
 
+                
 
                 foreach (var imageMM in TrendImageMMList)
                 {
@@ -99,6 +100,7 @@ namespace SortexApp.ViewModels
                         }
                     }
                 }
+                
                 TrendImageViewList.Add(trendImageView);
                 
             }

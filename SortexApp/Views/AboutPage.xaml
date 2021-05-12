@@ -48,9 +48,9 @@
                 </StackLayout>
 
                 <StackLayout  Orientation="Horizontal" HorizontalOptions="Center">
-                    
-                    <Button BorderWidth="5" BorderColor="{StaticResource Accent}" Margin="0,20,20,0" Text="Trender" CornerRadius="10"
-                        Command="{Binding }"
+
+                    <Button BorderWidth="5" BorderColor="{StaticResource Accent}" Margin="0,20,20,0" Text="Trender" CornerRadius="10" Clicked="BtnTrend_Clicked"
+                        
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White"
                         WidthRequest="270"

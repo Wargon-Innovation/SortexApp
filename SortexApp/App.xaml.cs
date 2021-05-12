@@ -4,7 +4,7 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using SortexApp.ViewModels;
-
+using System.Linq;
 
 namespace SortexApp
 {
@@ -13,13 +13,15 @@ namespace SortexApp
         static public OrderViewModel Order { get; set; } = new OrderViewModel();
         static public FractionViewModel Fraction { get; set; } = new FractionViewModel();
         static public TrendViewModel Trend { get; set; } = new TrendViewModel();
+
+        
         
 
 
         public App()
         {
             InitializeComponent();
-
+            
             DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
@@ -28,8 +30,11 @@ namespace SortexApp
         {
             await Order.LoadOrderAsync();
             await Fraction.LoadFractionAsync();
+            
             await Trend.LoadTrendAsync();
-        }
+
+            
+         }
 
         protected override void OnSleep()
         {
