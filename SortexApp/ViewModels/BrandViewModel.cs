@@ -109,29 +109,31 @@ namespace SortexApp.ViewModels
 
                 foreach (var brandTag in BrandTagMMList)
                 {
-                    if(brand.Id == brandTag.Id)
+                    if (brand.Id == brandTag.BrandId)
                     {
-                        foreach (var image in BrandImageList)
-                        {
-                            if(image.Id == brandTag.BrandId)
-                            {
-                                brandView.brandImages.Add(image);
-                            }
 
-                            foreach (var tag in BrandTagList)
+                        foreach (var tag in BrandTagList)
+                        {
+                            if (tag.Id == brandTag.TagId)
                             {
-                                if(tag.Id == brandTag.TagId)
-                                {
-                                    brandView.TagList.Add(tag);
-                                }
+                                brandView.TagList.Add(tag);
                             }
                         }
                     }
                 }
+
+                foreach (var image in BrandImageList)
+                {
+                    if (image.brandId == brand.Id)
+                    {
+                        brandView.brandImages.Add(image);
+                    }
+                }
+
                 BrandViewList.Add(brandView);
 
             }
-
+            RaisePropertyChanged("BrandViewList");
         }
 
         private void RaisePropertyChanged(string propertyName)

@@ -15,7 +15,17 @@
                     <ViewCell>
                         <StackLayout>
                             <Label Text="{Binding Id}"></Label>
-                            <Label Text="{Binding Manufacture}"></Label>
+                            <ListView ItemsSource="{Binding TagList}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout>
+                                                <Label Text="{Binding Value}"></Label>
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
