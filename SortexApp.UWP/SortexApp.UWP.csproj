@@ -143,6 +143,7 @@
     <Content Include="sorticonaccent.png" />
     <Content Include="trendicon.png" />
     <Content Include="wargonHeader.jpeg" />
+    <Content Include="wargonImage.jpg" />
     <Content Include="xamarin_logo.png" />
     <Content Include="icon_about.png" />
     <Content Include="icon_feed.png" />

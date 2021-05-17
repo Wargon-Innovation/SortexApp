@@ -101,20 +101,23 @@
     <FlyoutItem Title="Trend" Icon="trendicon.png">
         <ShellContent Route="TrendPage" ContentTemplate="{DataTemplate local:TrendPage}" />
     </FlyoutItem>
-    <!--<FlyoutItem Title="Moodboard" Icon="modeboardicon.png">
-        <ShellContent Route="OrderPage" ContentTemplate="{DataTemplate local:OrderPage}" />
+    
+    <FlyoutItem Title="Märken" Icon="brandicon.png">
+        <ShellContent Route="BrandPage" ContentTemplate="{DataTemplate local:BrandPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Trender" Icon="trendicon.png">
-        <ShellContent Route="OrderPage" ContentTemplate="{DataTemplate local:OrderPage}" />
+        
     </FlyoutItem>
     <FlyoutItem Title="Märken" Icon="brandicon.png">
-        <ShellContent Route="OrderPage" ContentTemplate="{DataTemplate local:OrderPage}" />
+        
     </FlyoutItem>
     <FlyoutItem Title="Viktigt att tänka på" Icon="assignmenticon.png">
-        <ShellContent Route="OrderPage" ContentTemplate="{DataTemplate local:OrderPage}" />
-    </FlyoutItem>-->
-    
+       
+    </FlyoutItem>
 
+    <!--<FlyoutItem Title="Trend" Icon="trendicon.png">
+        <ShellContent Route="TestPage" ContentTemplate="{DataTemplate local:TestPage}" />
+    </FlyoutItem>-->
 
 
 
@@ -132,6 +135,9 @@
     -->
     <TabBar>
         <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}"></ShellContent>
+        
+    </TabBar>
+    <TabBar>
         <ShellContent Route="TrendDetailsPage" ContentTemplate="{DataTemplate local:TrendDetailsPage}"/>
     </TabBar>
 

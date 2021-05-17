@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SortexApp.Views.TestPage"
+             >
+    
+    <ScrollView BackgroundColor="{StaticResource Background}">
+        <Grid ColumnSpacing="0" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="300"></RowDefinition>
+                <RowDefinition Height="AUTO"></RowDefinition>
+                <RowDefinition Height="AUTO"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="AUTO"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!--bakgrund bildheader-->
+            <Image Aspect="Fill" Source="wargonImage.jpg"></Image>
+            <Image Aspect="Fill" Source="wargonImage.jpg" VerticalOptions="End" ></Image>
+            
+            <!--profil image-->
+            <Image HeightRequest="100" HorizontalOptions="Center" Source="logoWargon.png" VerticalOptions="End" WidthRequest="10000" Margin="-50"></Image>
+
+            <StackLayout Grid.Row="1" Padding="0,50,0,00" HorizontalOptions="Center">
+                <Label HorizontalTextAlignment="Center" Style="{StaticResource Primary}" Text="Order" FontSize="Large" FontAttributes="Bold" TextColor="White"></Label>
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Orientation="Horizontal" BackgroundColor="{StaticResource Background}">
+                <ListView ItemsSource="{Binding OrderList}" HasUnevenRows="True" Margin="60,20,40,0" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Margin="0,0,0,10">
+                                    <Frame VerticalOptions="Center" 
+                                           BackgroundColor="{StaticResource Background}" 
+                                           BorderColor="{StaticResource Primary}" 
+                                           HasShadow="True" 
+                                           HeightRequest="40" 
+                                           Margin="0">
+                                        <Label Text="{Binding Name}" TextColor="White" FontAttributes="Bold" FontSize="Large"></Label>
+                                    </Frame>
+                                    <Frame BackgroundColor="{StaticResource Background}" BorderColor="{StaticResource Primary}" VerticalOptions="Center" HasShadow="True" Margin="0">
+                                        <StackLayout>
+                                            <Label Text="{Binding GetDate}" TextColor="{StaticResource Primary}" FontAttributes="Italic" FontSize="Medium" HorizontalOptions="Center"></Label>
+                                            <Label Text="Beskrivning" FontAttributes="Bold" TextColor="White" TextDecorations="Underline"></Label>
+                                            <Label Text="{Binding Description}" TextColor="White" BackgroundColor="{StaticResource Background}"></Label>
+
+                                        </StackLayout>
+                                    </Frame>
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

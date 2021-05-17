@@ -13,7 +13,7 @@ namespace SortexApp
         static public OrderViewModel Order { get; set; } = new OrderViewModel();
         static public FractionViewModel Fraction { get; set; } = new FractionViewModel();
         static public TrendViewModel Trend { get; set; } = new TrendViewModel();
-
+        static public BrandViewModel Brand { get; set; } = new BrandViewModel();
         
         
 
@@ -24,14 +24,17 @@ namespace SortexApp
             
             DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
+            
         }
 
         protected override async void OnStart()
         {
+           
+
             await Order.LoadOrderAsync();
             await Fraction.LoadFractionAsync();
-            
             await Trend.LoadTrendAsync();
+            await Brand.LoadBrandAsync();
 
             
          }
