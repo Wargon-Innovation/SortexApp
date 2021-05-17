@@ -8,28 +8,27 @@
         <vm:BrandViewModel />
     </ContentPage.BindingContext>
 
-    <ContentPage.Content>
-        <ListView ItemsSource="{Binding BrandViewList}">
+    <StackLayout>
+        <SearchBar x:Name="brandSearch"
+                    Placeholder="Search Brands" 
+                    SearchButtonPressed="SearchBar_SearchButtonPressed"
+                    TextChanged="brandSearch_TextChanged"
+                    >
+        </SearchBar>
+        <ListView x:Name="brandListView"
+                  ItemsSource="{Binding BrandViewList}"
+                  HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout>
-                            <Label Text="{Binding Id}"></Label>
-                            <ListView ItemsSource="{Binding TagList}">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <ViewCell>
-                                            <StackLayout>
-                                                <Label Text="{Binding Value}"></Label>
-                                            </StackLayout>
-                                        </ViewCell>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
+                            <Label Text="{Binding Manufacture}" TextColor="Green"></Label>
+                           
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </ContentPage.Content>
+    </StackLayout>
+        
 </ContentPage>

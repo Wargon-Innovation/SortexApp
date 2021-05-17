@@ -12,6 +12,7 @@ namespace SortexApp.Models
         public string Classification { get; set; }
         public List<Tag> TagList { get; set; } = new List<Tag>();
         public List<BrandImages> brandImages{ get; set; } = new List<BrandImages>();
+        public Tag Value { get; set; }
 
     }
 }
