@@ -8,23 +8,42 @@
         <vm:BrandViewModel />
     </ContentPage.BindingContext>
 
-    <StackLayout>
-        <SearchBar x:Name="brandSearch"
+    <StackLayout BackgroundColor="{StaticResource Background}">
+        <StackLayout WidthRequest="10" BackgroundColor="AliceBlue" Margin="10">
+            <SearchBar x:Name="brandSearch"
                     Placeholder="Search Brands" 
                     SearchButtonPressed="SearchBar_SearchButtonPressed"
                     TextChanged="brandSearch_TextChanged"
-                    >
+                    CancelButtonColor="{StaticResource Accent}"
+                    PlaceholderColor="{StaticResource Accent}"
+                    TextColor="{StaticResource Background}"
+                    HorizontalTextAlignment="Center"
+                    FontSize="Medium">
         </SearchBar>
-        <ListView x:Name="brandListView"
-                  ItemsSource="{Binding BrandViewList}"
+        </StackLayout>
+        <ListView ItemsSource="{Binding BrandViewList}"
+                  x:Name="brandListView"
                   HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout>
-                            <Label Text="{Binding Manufacture}" TextColor="Green"></Label>
-                           
+                            <Label Text="{Binding Manufacturer}" TextColor="White"></Label>
+                            <Label Text="{Binding Classification}" TextColor="White"></Label>
+                            <Label Text="{Binding Gender}" TextColor="White"></Label>
+                        
+                        <StackLayout>
+                            <ListView ItemsSource="{Binding brandImages}" RowHeight="100" HeightRequest="100">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Image Source="{Binding Image}" ></Image>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
                         </StackLayout>
+                     </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

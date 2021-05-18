@@ -104,9 +104,10 @@ namespace SortexApp.ViewModels
             {
                 var brandView = new BrandView();
                 brandView.Id = brand.Id;
-                brandView.Manufacture = brand.Manufacture;
+                brandView.Manufacturer = brand.Manufacturer;
                 brandView.Classification = brand.Classification;
-
+                brandView.Gender = brand.Gender;
+                
                 foreach (var brandTag in BrandTagMMList)
                 {
                     if (brand.Id == brandTag.BrandId)

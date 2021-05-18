@@ -7,7 +7,7 @@ namespace SortexApp.Models
     public class BrandImages
     {
         public int Id { get; set; }
-        public string Img { get; set; }
+        public string Image { get; set; }
         public int brandId { get; set; }
         public Brand Brand { get; set; }
     }
