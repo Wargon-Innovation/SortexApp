@@ -11,8 +11,10 @@ namespace SortexApp.Models
         public string Gender { get; set; }
         public string Classification { get; set; }
         public List<Tag> TagList { get; set; } = new List<Tag>();
-        public List<BrandImages> brandImages{ get; set; } = new List<BrandImages>();
-        
-     
+        public List<BrandImages> brandImages { get; set; } = new List<BrandImages>();
+        public bool IsVisible { get; set; }
+
+
+
     }
 }

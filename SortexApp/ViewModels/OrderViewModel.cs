@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using Xamarin.Forms;
@@ -39,13 +40,17 @@ namespace SortexApp.ViewModels
 
                 await Application.Current.MainPage.DisplayAlert("Error", "Connection unstable (" + ex.Message + ")", "Cancel");
             }
+
+            OrderList = new ObservableCollection<Order>(OrderList.OrderBy(i => i.Id).Reverse().ToList());
         }
+        
+
+
 
         public void HideOrShowOrder(Order order)
         {
             order.isVisible = true;
-
-                UpdateOrder(order);
+            UpdateOrder(order);
 
             if (_oldOrder == order)
             {

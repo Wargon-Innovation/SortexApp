@@ -14,16 +14,13 @@ namespace SortexApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BrandPage : ContentPage
     {
-        
+
         public BrandPage()
         {
             InitializeComponent();
             BindingContext = App.Brand;
-        }
+            Title = "Märken";
 
-        private void SearchBar_SearchButtonPressed(object sender, EventArgs e)
-        {
-           
         }
 
         private void brandSearch_TextChanged(object sender, TextChangedEventArgs e)
@@ -32,7 +29,7 @@ namespace SortexApp.Views
             if (string.IsNullOrWhiteSpace(e.NewTextValue))
             {
                 brandListView.ItemsSource = App.Brand.BrandViewList;
-               
+
             }
             else
             {
@@ -46,24 +43,20 @@ namespace SortexApp.Views
                 brandListView.ItemsSource = brand;
 
 
-                //brandListView.ItemsSource = App.Brand.BrandTagList.Where(i => i.Value.Contains(e.NewTextValue));
-
-                //foreach (var item in App.Brand.BrandList)
-                //{
-                //    if (searchTag == item.BrandTag)
-                //    {
-                //        var brand = new BrandView();
-                //        brand.Id = item.Id;
-                //        brand.Classification = item.Classification;
-                //        brand.Manufacture = item.Manufacture;
-                //        brand.Gender = item.Gender;
-                //        brandListView.ItemsSource = (System.Collections.IEnumerable)brand;
-                //    }
-                //}
-
             }
-            
+
             brandListView.EndRefresh();
+        }
+
+        private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var vm = BindingContext as BrandViewModel;
+            var order = e.Item as BrandView;
+            vm.HideOrShowBrand(order);
+        }
+        private void SearchBar_SearchButtonPressed(object sender, EventArgs e)
+        {
+
         }
     }
 }

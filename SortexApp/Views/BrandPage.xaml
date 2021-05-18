@@ -8,9 +8,25 @@
         <vm:BrandViewModel />
     </ContentPage.BindingContext>
 
-    <StackLayout BackgroundColor="{StaticResource Background}">
-        <StackLayout WidthRequest="10" BackgroundColor="AliceBlue" Margin="10">
-            <SearchBar x:Name="brandSearch"
+
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource Background}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                        <Image Source="sortexiconblue.png"  VerticalOptions="Center" HeightRequest="64" />
+                    </ContentView>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" BackgroundColor="{StaticResource Background}">
+                <StackLayout WidthRequest="10" BackgroundColor="AliceBlue" Margin="10">
+                    <SearchBar x:Name="brandSearch"
                     Placeholder="Search Brands" 
                     SearchButtonPressed="SearchBar_SearchButtonPressed"
                     TextChanged="brandSearch_TextChanged"
@@ -19,35 +35,52 @@
                     TextColor="{StaticResource Background}"
                     HorizontalTextAlignment="Center"
                     FontSize="Medium">
-        </SearchBar>
-        </StackLayout>
-        <ListView ItemsSource="{Binding BrandViewList}"
-                  x:Name="brandListView"
-                  HasUnevenRows="True">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout>
-                            <Label Text="{Binding Manufacturer}" TextColor="White"></Label>
-                            <Label Text="{Binding Classification}" TextColor="White"></Label>
-                            <Label Text="{Binding Gender}" TextColor="White"></Label>
-                        
-                        <StackLayout>
-                            <ListView ItemsSource="{Binding brandImages}" RowHeight="100" HeightRequest="100">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <ViewCell>
-                                            <Image Source="{Binding Image}" ></Image>
-                                        </ViewCell>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-                        </StackLayout>
-                     </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
-        
+                    </SearchBar>
+                </StackLayout>
+
+                <ListView ItemsSource="{Binding BrandViewList}"
+                      Margin="60,20,40,0"
+                      x:Name="brandListView"
+                      HasUnevenRows="True"
+                      ItemTapped="ListView_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Margin="0,0,0,10">
+                                    <Frame BackgroundColor="{StaticResource Background}" BorderColor="{StaticResource Primary}" HasShadow="true" HeightRequest="40" Margin="0">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding Manufacturer}" TextColor="White" FontSize="Large" FontAttributes="Bold"></Label>
+                                        </StackLayout>
+                                    </Frame>
+                                    <Frame BackgroundColor="{StaticResource Background}"
+                                           IsVisible="{Binding IsVisible}"
+                                           BorderColor="{StaticResource Primary}"
+                                           VerticalOptions="Center"
+                                           HasShadow="true"
+                                           Margin="0">
+                                        <StackLayout>
+                                            <Label Text="{Binding Classification}" IsVisible="{Binding IsVisible}"  TextColor="White"></Label>
+                                            <Label Text="{Binding Gender}" IsVisible="{Binding IsVisible}" TextColor="White"></Label>
+                                        </StackLayout>
+                                    </Frame>
+                                    <StackLayout IsVisible="{Binding IsVisible}">
+                                        <ListView ItemsSource="{Binding brandImages}" RowHeight="100" HeightRequest="100">
+                                            <ListView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <ViewCell>
+                                                        <Image Source="{Binding Image}"></Image>
+                                                    </ViewCell>
+                                                </DataTemplate>
+                                            </ListView.ItemTemplate>
+                                        </ListView>
+                                    </StackLayout>
+                                        
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,6 +41,8 @@ namespace SortexApp.ViewModels
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "Connection unstable (" + ex.Message + ")", "Cancel");
             }
+
+            FractionList = new ObservableCollection<Fraction>(FractionList.OrderBy(i => i.Number).ToList());
         }
 
         public void HideOrShowFractions(Fraction fraction)

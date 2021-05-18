@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,7 @@ namespace SortexApp.ViewModels
 {
    public class BrandViewModel : INotifyPropertyChanged
     {
-        //https://informatik13.ei.hv.se/SortexAPI/api/BrandTagMMs
-        //https://informatik13.ei.hv.se/SortexAPI/api/Tags
-        //https://informatik13.ei.hv.se/SortexAPI/api/Brands
-        //https://informatik13.ei.hv.se/SortexAPI/api/BrandImages
+        private BrandView _oldBrand;
 
         public ObservableCollection<Brand> BrandList { get; set; } = new ObservableCollection<Brand>();
         public ObservableCollection<Tag> BrandTagList { get; set; } = new ObservableCollection<Tag>();
@@ -134,7 +132,40 @@ namespace SortexApp.ViewModels
                 BrandViewList.Add(brandView);
 
             }
+            BrandViewList = new ObservableCollection<BrandView>(BrandViewList.OrderBy(i => i.Manufacturer).ToList());
             RaisePropertyChanged("BrandViewList");
+        }
+
+        internal void HideOrShowBrand(BrandView brand)
+        {
+            brand.IsVisible = true;
+            UpdateBrand(brand);
+            if(_oldBrand == brand)
+            {
+                brand.IsVisible = !brand.IsVisible;
+                UpdateBrand(brand);
+            }
+            else
+            {
+                if(_oldBrand != null)
+                {
+                    _oldBrand.IsVisible = false;
+                    UpdateBrand(_oldBrand);
+                }
+                brand.IsVisible = true;
+                UpdateBrand(brand);
+            }
+            _oldBrand = brand;
+        }
+
+        private void UpdateBrand(BrandView brand)
+        {
+            var index = BrandViewList.IndexOf(brand);
+            if(index != -1)
+            {
+                BrandViewList.Remove(brand);
+                BrandViewList.Insert(index, brand);
+            }
         }
 
         private void RaisePropertyChanged(string propertyName)

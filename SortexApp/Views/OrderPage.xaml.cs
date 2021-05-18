@@ -1,5 +1,6 @@
-﻿    using System;
+﻿ using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,18 +14,25 @@ namespace SortexApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class OrderPage : ContentPage
     {
+        
         public OrderPage()
         {
             InitializeComponent();
             BindingContext = App.Order;
             Title = "Order";
+         
+            
         }
-
+        
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
+            
             var vm = BindingContext as OrderViewModel;
             var order = e.Item as Order;
             vm.HideOrShowOrder(order);
+            
         }
+
+       
     }
 }

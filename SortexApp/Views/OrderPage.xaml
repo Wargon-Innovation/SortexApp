@@ -8,7 +8,8 @@
     <ContentPage.BindingContext>
         <vm:OrderViewModel />
     </ContentPage.BindingContext>
-   
+    
+
     <ContentPage.Content>
         <Grid BackgroundColor="{StaticResource Background}">
             <Grid.RowDefinitions>
@@ -23,7 +24,7 @@
                     </ContentView>
                 </StackLayout>
             </StackLayout>
-
+            
             <StackLayout Grid.Row="1" Orientation="Horizontal" BackgroundColor="{StaticResource Background}">
                 <ListView ItemsSource="{Binding OrderList}" HasUnevenRows="True" Margin="60,20,40,0" ItemTapped="ListView_ItemTapped">
                     <ListView.ItemTemplate>
@@ -36,10 +37,12 @@
                                            HasShadow="True" 
                                            HeightRequest="40" 
                                            Margin="0">
+                                        
                                         <Label Text="{Binding Name}" TextColor="White" FontAttributes="Bold" FontSize="Large"></Label>
                                     </Frame>
                                     <Frame BackgroundColor="{StaticResource Background}" BorderColor="{StaticResource Primary}" IsVisible="{Binding isVisible}" VerticalOptions="Center" HasShadow="True" Margin="0">
                                         <StackLayout>
+                                            <Label Text="{Binding Id}" TextColor="White" FontAttributes="Bold" FontSize="Large"></Label>
                                             <Label Text="{Binding GetDate}" TextColor="{StaticResource Primary}" FontAttributes="Italic" FontSize="Medium" HorizontalOptions="Center"></Label>
                                             <Label Text="Beskrivning" FontAttributes="Bold" IsVisible="{Binding isVisible}" TextColor="White" TextDecorations="Underline"></Label>
                                             <Label Text="{Binding Description}" IsVisible="{Binding isVisible}"  TextColor="White" BackgroundColor="{StaticResource Background}"></Label>
