@@ -14,11 +14,12 @@ namespace SortexApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BrandPage : ContentPage
     {
-
+        private bool isPlaceHolder;
         public BrandPage()
         {
             InitializeComponent();
             BindingContext = App.Brand;
+            brandListView.ItemsSource = App.Brand.BrandViewList;
             Title = "Märken";
 
         }
@@ -28,23 +29,15 @@ namespace SortexApp.Views
             brandListView.BeginRefresh();
             if (string.IsNullOrWhiteSpace(e.NewTextValue))
             {
+                isPlaceHolder = false;
                 brandListView.ItemsSource = App.Brand.BrandViewList;
 
             }
             else
             {
-
-                var brand = (from tags in App.Brand.BrandTagList
-                             join brandTagsMM in App.Brand.BrandTagMMList on tags.Id equals brandTagsMM.TagId
-                             join brands in App.Brand.BrandViewList on brandTagsMM.BrandId equals brands.Id
-                             where tags.Value.Contains(e.NewTextValue)
-                             select brands).ToList();
-
-                brandListView.ItemsSource = brand;
-
-
+                isPlaceHolder = true;
+                brandListView.ItemsSource = App.Brand.SearchBrand(e.NewTextValue);
             }
-
             brandListView.EndRefresh();
         }
 
@@ -52,7 +45,14 @@ namespace SortexApp.Views
         {
             var vm = BindingContext as BrandViewModel;
             var order = e.Item as BrandView;
-            vm.HideOrShowBrand(order);
+            if (isPlaceHolder)
+            {
+                vm.HideOrShowBrandPlaceHolder(order);
+            }
+            else
+            {
+                vm.HideOrShowBrand(order);
+            }
         }
         private void SearchBar_SearchButtonPressed(object sender, EventArgs e)
         {

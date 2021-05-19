@@ -38,16 +38,22 @@
                     </SearchBar>
                 </StackLayout>
 
-                <ListView ItemsSource="{Binding BrandViewList}"
-                      Margin="60,20,40,0"
+                <ListView
+                    Margin="60,20,40,0"
                       x:Name="brandListView"
                       HasUnevenRows="True"
                       ItemTapped="ListView_ItemTapped">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout Margin="0,0,0,10">
-                                    <Frame BackgroundColor="{StaticResource Background}" BorderColor="{StaticResource Primary}" HasShadow="true" HeightRequest="40" Margin="0">
+                                <StackLayout Margin="0,0,0,10" >
+                                    <Frame BackgroundColor="{StaticResource Background}"
+                                           BorderColor="{StaticResource Primary}"
+                                           HasShadow="true"
+                                           HeightRequest="40"
+                                           Margin="0"
+                                           >
+                                        
                                         <StackLayout Orientation="Horizontal">
                                             <Label Text="{Binding Manufacturer}" TextColor="White" FontSize="Large" FontAttributes="Bold"></Label>
                                         </StackLayout>

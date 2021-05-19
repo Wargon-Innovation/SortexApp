@@ -35,8 +35,9 @@
                                             <Label Text="{Binding Number}" TextColor="White" FontSize="Large" FontAttributes="Bold"></Label>
                                             <Label Text="{Binding Name}" TextColor="White" FontSize="Large" FontAttributes="Bold"></Label>
                                         </StackLayout>
+                                        
                                     </Frame>
-                                    <Frame BackgroundColor="{StaticResource Background}" IsVisible="{Binding IsVisible}" BorderColor="{StaticResource Primary}" VerticalOptions="Center" HasShadow="True" Margin="0">
+                                    <Frame BackgroundColor="{StaticResource Secondary}" IsVisible="{Binding IsVisible}" BorderColor="{StaticResource Primary}" VerticalOptions="Center" HasShadow="True" Margin="0">
                                         <Label Text="{Binding Description}" IsVisible="{Binding IsVisible}" TextColor="White"></Label>
                                     </Frame>
                                     

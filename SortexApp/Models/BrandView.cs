@@ -13,6 +13,7 @@ namespace SortexApp.Models
         public List<Tag> TagList { get; set; } = new List<Tag>();
         public List<BrandImages> brandImages { get; set; } = new List<BrandImages>();
         public bool IsVisible { get; set; }
+        public bool Visible { get; set; }
 
 
 
