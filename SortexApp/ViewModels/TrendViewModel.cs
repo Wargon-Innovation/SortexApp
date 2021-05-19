@@ -86,8 +86,16 @@ namespace SortexApp.ViewModels
                 trendImageView.Season = trend.Season;
                 trendImageView.Description = trend.Description;
 
+                var trendImages = (from rowsTrendImages in TrendImageList
+                                   join rowsTrendImagesMM in TrendImageMMList on rowsTrendImages.Id equals rowsTrendImagesMM.TrendImageId
+                                   where rowsTrendImagesMM.TrendId == trend.Id
+                                   select rowsTrendImages).ToList();
                 
-
+                foreach (var image in trendImages)
+                {
+                    trendImageView.TrendImages.Add(image);
+                }
+                /*
                 foreach (var imageMM in TrendImageMMList)
                 {
                     if (trend.Id == imageMM.TrendId)
@@ -101,6 +109,7 @@ namespace SortexApp.ViewModels
                         }
                     }
                 }
+                */
                 
                 TrendImageViewList.Add(trendImageView);
                 

@@ -107,7 +107,27 @@ namespace SortexApp.ViewModels
                 brandView.Classification = brand.Classification;
                 brandView.Gender = brand.Gender;
 
-                foreach (var brandTag in BrandTagMMList)
+                //TAGGAR
+                var brandTags = (from rowsBrandTagMM in BrandTagMMList
+                                 join rowsTag in BrandTagList on rowsBrandTagMM.TagId equals rowsTag.Id
+                                 where rowsBrandTagMM.BrandId == brand.Id
+                                 select rowsTag).ToList();
+                foreach (var tag in brandTags)
+                {
+                    brandView.TagList.Add(tag);
+                }
+
+                //BILDER
+                var brandImages = (from rowsImage in BrandImageList
+                                   where rowsImage.brandId == brand.Id
+                                   select rowsImage).ToList();
+                foreach (var image in brandImages)
+                {
+                    brandView.brandImages.Add(image);
+                }
+
+                BrandViewList.Add(brandView);
+                /*foreach (var brandTag in BrandTagMMList)
                 {
                     if (brand.Id == brandTag.BrandId)
                     {
@@ -120,8 +140,9 @@ namespace SortexApp.ViewModels
                             }
                         }
                     }
-                }
+                }*/
 
+                /*
                 foreach (var image in BrandImageList)
                 {
                     if (image.brandId == brand.Id)
@@ -129,8 +150,8 @@ namespace SortexApp.ViewModels
                         brandView.brandImages.Add(image);
                     }
                 }
+                */
 
-                BrandViewList.Add(brandView);
                 //1. flytta funktion till viewmodel
                 //2. listor, baslista och displaylist som kopia. Ny sökning som ersätter displaylistan.
                 //property visible = false
