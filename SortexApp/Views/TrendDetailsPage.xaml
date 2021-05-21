@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SortexApp.Views.TrendDetailsPage"
-              xmlns:vm="clr-namespace:SortexApp.Models">
+              xmlns:vm="clr-namespace:SortexApp.Models"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView">
     
     <ContentPage.BindingContext>
         <vm:TrendImageView />
@@ -14,7 +15,6 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
-                
             </Grid.RowDefinitions>
 
             <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
@@ -26,23 +26,67 @@
             </StackLayout>
 
             <StackLayout Grid.Row="1" Orientation="Horizontal" BackgroundColor="{StaticResource Background}">
-            
-                <ListView ItemsSource="{Binding TrendImages}" HasUnevenRows="True">
+
+                <flv:FlowListView FlowItemsSource="{Binding TrendImages}" FlowColumnCount="3" SeparatorVisibility="None" HasUnevenRows="False">
+                    <flv:FlowListView.FlowColumnTemplate>
+                        <DataTemplate>
+                            <Grid BackgroundColor="{StaticResource Background}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image x:Name="imgMain" Source="{Binding Image}" Grid.Row="0" Grid.ColumnSpan="2"></Image>
+                            </Grid>
+                        </DataTemplate>
+                    </flv:FlowListView.FlowColumnTemplate>
+                </flv:FlowListView>
+
+                <!--<CollectionView x:Name="collectionView" ItemsSource="{Binding TrendImages}" HeightRequest="200" ItemsLayout="HorizontalList">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid BackgroundColor="{StaticResource Background}" RowDefinitions="Auto">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image x:Name="imgMain" Grid.RowSpan="1" Grid.Column="1" Source="{Binding Image}" WidthRequest="200" HeightRequest="350" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>-->
+
+                <!--<CarouselView ItemsSource="{Binding TrendImages}">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Frame>
+                                    <StackLayout>
+                                        <Image x:Name="imgMain" Source="{Binding Image}" WidthRequest="200" HeightRequest="350" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>    
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>-->
+                <!--<ListView ItemsSource="{Binding TrendImages}" HasUnevenRows="True">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout VerticalOptions="StartAndExpand" BackgroundColor="Transparent" Padding="0,25">
                                     <Image x:Name="imgMain" Source="{Binding Image}" WidthRequest="100" HeightRequest="250" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
 
-                                    <!--<Image x:Name="imgSub" Source="{Binding LVSubImage}" Aspect="AspectFit" WidthRequest="50"
-                                      HeightRequest="75" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
-                                    <Label LineHeight="0.8" Text="{Binding Title}" VerticalTextAlignment="Start" TextColor="Black" FontSize="14"/>-->
+                                    
                                 </StackLayout>
 
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                </ListView>
+                </ListView>-->
+                <!--</CarouselView>-->
             </StackLayout>
          </Grid>
     </ContentPage.Content>

@@ -4,7 +4,18 @@
              x:Class="SortexApp.Views.MoodboardPage">
     <ContentPage.Content>
         <StackLayout>
-           
+            <!--<CarouselView ItemsSource="{Binding TrendImages}">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Frame>
+                                    <StackLayout>
+                                        <Image x:Name="imgMain" Source="{Binding Image}" WidthRequest="200" HeightRequest="350" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>    
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
