@@ -31,8 +31,8 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout VerticalOptions="Fill" BackgroundColor="Transparent" Padding="0,25">
-                                    <Image x:Name="imgMain" Source="{Binding Image}"  WidthRequest="100" HeightRequest="250" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                                <StackLayout VerticalOptions="StartAndExpand" BackgroundColor="Transparent" Padding="0,25">
+                                    <Image x:Name="imgMain" Source="{Binding Image}" WidthRequest="100" HeightRequest="250" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
 
                                     <!--<Image x:Name="imgSub" Source="{Binding LVSubImage}" Aspect="AspectFit" WidthRequest="50"
                                       HeightRequest="75" VerticalOptions="End" HorizontalOptions="FillAndExpand" />

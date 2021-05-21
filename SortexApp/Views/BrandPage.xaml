@@ -23,8 +23,8 @@
                     </ContentView>
                 </StackLayout>
             </StackLayout>
-
-            <StackLayout Grid.Row="1" BackgroundColor="{StaticResource Background}">
+            <Image HeightRequest="100" HorizontalOptions="Center" Source="brandicon.png" VerticalOptions="End" WidthRequest="10000" Margin="-100"></Image>
+            <StackLayout Grid.Row="1" BackgroundColor="{StaticResource Background}" Margin="100">
                 <StackLayout WidthRequest="10" BackgroundColor="AliceBlue" Margin="10">
                     <SearchBar x:Name="brandSearch"
                     Placeholder="Search Brands" 

@@ -24,13 +24,14 @@
                     </ContentView>
                 </StackLayout>
             </StackLayout>
-            
-            <StackLayout Grid.Row="1" Orientation="Horizontal" BackgroundColor="{StaticResource Background}">
+            <Image HeightRequest="100" HorizontalOptions="Center" Source="ordericon.png" VerticalOptions="End" WidthRequest="10000" Margin="-100"></Image>
+            <StackLayout Grid.Row="1" Orientation="Horizontal" BackgroundColor="{StaticResource Background}" Margin="100">
                 <ListView ItemsSource="{Binding OrderList}" HasUnevenRows="True" Margin="60,20,40,0" ItemTapped="ListView_ItemTapped">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout Margin="0,0,0,10">
+                                   
                                     <Frame VerticalOptions="Center" 
                                            BackgroundColor="{StaticResource Background}" 
                                            BorderColor="{StaticResource Primary}" 

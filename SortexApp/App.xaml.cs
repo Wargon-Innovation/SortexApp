@@ -14,7 +14,7 @@ namespace SortexApp
         static public FractionViewModel Fraction { get; set; } = new FractionViewModel();
         static public TrendViewModel Trend { get; set; } = new TrendViewModel();
         static public BrandViewModel Brand { get; set; } = new BrandViewModel();
-        
+        static public MoodboardViewModel Moodboard { get; set; } = new MoodboardViewModel();
         
 
 
@@ -35,7 +35,7 @@ namespace SortexApp
             await Fraction.LoadFractionAsync();
             await Trend.LoadTrendAsync();
             await Brand.LoadBrandAsync();
-
+            await Moodboard.LoadMoodboardAsync();
             
          }
 
