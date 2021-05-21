@@ -25,25 +25,51 @@
                 </StackLayout>
             </StackLayout>
 
-            <StackLayout Grid.Row="1" Orientation="Horizontal" BackgroundColor="{StaticResource Background}">
+            <StackLayout Grid.Row="1" Orientation="Horizontal" BackgroundColor="{StaticResource Background}" HorizontalOptions="CenterAndExpand">
 
-                <flv:FlowListView FlowItemsSource="{Binding TrendImages}" FlowColumnCount="3" SeparatorVisibility="None" HasUnevenRows="False">
+
+                <StackLayout Padding="10">
+                    <flv:FlowListView FlowColumnCount="3"
+                                      SeparatorVisibility="Default"
+                                      HasUnevenRows="True"
+                                      FlowItemsSource="{Binding TrendImages}"
+                                      >
+
+                        <flv:FlowListView.FlowColumnTemplate>
+                            <DataTemplate>
+                                <StackLayout HorizontalOptions="Center" Orientation="Horizontal"   >
+
+                                    <StackLayout WidthRequest="250" HeightRequest="400" HorizontalOptions="Center" >
+                                        <Image x:Name="imgMain" Source="{Binding Image}" HorizontalOptions="Center"></Image>
+                                    </StackLayout>
+                                </StackLayout>
+                            </DataTemplate>
+                        </flv:FlowListView.FlowColumnTemplate>
+                    </flv:FlowListView>
+                </StackLayout>
+
+
+
+
+                <!--<flv:FlowListView FlowItemsSource="{Binding TrendImages}" FlowColumnCount="3" SeparatorVisibility="None" HasUnevenRows="False">
                     <flv:FlowListView.FlowColumnTemplate>
                         <DataTemplate>
                             <Grid BackgroundColor="{StaticResource Background}">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Image x:Name="imgMain" Source="{Binding Image}" Grid.Row="0" Grid.ColumnSpan="2"></Image>
+                                
+                                <Image x:Name="imgMain" Source="{Binding Image}" Grid.Row="0" Grid.ColumnSpan="2" WidthRequest="250" HeightRequest="500"></Image>
+                                
                             </Grid>
                         </DataTemplate>
                     </flv:FlowListView.FlowColumnTemplate>
-                </flv:FlowListView>
+                </flv:FlowListView>-->
 
                 <!--<CollectionView x:Name="collectionView" ItemsSource="{Binding TrendImages}" HeightRequest="200" ItemsLayout="HorizontalList">
                     <CollectionView.ItemTemplate>
