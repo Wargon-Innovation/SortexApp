@@ -62,7 +62,7 @@
                         TextColor="White"
                         WidthRequest="270"
                         HeightRequest="130"
-                            ImageSource="modeboardicon.png"
+                        ImageSource="modeboardicon.png"
                         />
                 </StackLayout>
                 <StackLayout  Orientation="Horizontal" HorizontalOptions="Center">
@@ -72,14 +72,14 @@
                         TextColor="White"
                         WidthRequest="270"
                         HeightRequest="130"
-                            ImageSource="brandicon.png"/>
+                        ImageSource="brandicon.png"/>
                     <Button BorderWidth="5" BorderColor="{StaticResource Accent}" Margin="0,20,0,0" Text="Att tänka på" CornerRadius="10"
                         Command="{Binding }"
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White"
                         WidthRequest="270"
                         HeightRequest="130"
-                            ImageSource="assignmenticon.png"/>
+                        ImageSource="assignmenticon.png"/>
                 </StackLayout>
             </StackLayout>
             

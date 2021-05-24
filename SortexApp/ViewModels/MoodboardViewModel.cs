@@ -42,6 +42,7 @@ namespace SortexApp.ViewModels
 
                 await Application.Current.MainPage.DisplayAlert("Error", "Connection unstable (" + ex.Message + ")", "Cancel");
             }
+            MoodboardList = new ObservableCollection<Moodboard>(MoodboardList.OrderBy(i => i.Name).ToList());
         }
 
         private void RaisePropertyChanged(string propertyName)

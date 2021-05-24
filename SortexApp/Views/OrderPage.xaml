@@ -43,11 +43,23 @@
                                     </Frame>
                                     <Frame BackgroundColor="{StaticResource Background}" BorderColor="{StaticResource Primary}" IsVisible="{Binding isVisible}" VerticalOptions="Center" HasShadow="True" Margin="0">
                                         <StackLayout>
-                                            <Label Text="{Binding Id}" TextColor="White" FontAttributes="Bold" FontSize="Large"></Label>
-                                            <Label Text="{Binding GetDate}" TextColor="{StaticResource Primary}" FontAttributes="Italic" FontSize="Medium" HorizontalOptions="Center"></Label>
-                                            <Label Text="Beskrivning" FontAttributes="Bold" IsVisible="{Binding isVisible}" TextColor="White" TextDecorations="Underline"></Label>
+                                            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                                <Label Text="Pågående mellan" TextColor="{StaticResource Primary}" FontSize="Subtitle" FontAttributes="Italic"></Label>
+                                            </StackLayout>
+                                            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+
+                                                <Label Text="{Binding Start, StringFormat='{0:yyyy/MM/dd /  }'}" TextColor="{StaticResource Primary}"
+                                                   FontAttributes="Italic"
+                                                   FontSize="Medium"
+                                                   HorizontalOptions="Center" ></Label>
+                                                <Label Text="{Binding End, StringFormat='{0:yyyy/MM/dd}'}" TextColor="{StaticResource Primary}"
+                                                   FontAttributes="Italic"
+                                                   FontSize="Medium"
+                                                   HorizontalOptions="Center" ></Label>
+                                            </StackLayout>
+                                            <Label Text="Beskrivning" FontAttributes="Bold" IsVisible="{Binding isVisible}" TextColor="White" TextDecorations="Underline" FontSize="Medium" HorizontalTextAlignment="Start"></Label>
                                             <Label Text="{Binding Description}" IsVisible="{Binding isVisible}"  TextColor="White" BackgroundColor="{StaticResource Background}"></Label>
-                                            
+                                           
                                         </StackLayout>
                                     </Frame>
                                    

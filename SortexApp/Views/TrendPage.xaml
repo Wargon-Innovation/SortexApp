@@ -23,8 +23,8 @@
                     </ContentView>
                 </StackLayout>
             </StackLayout>
-
-            <StackLayout Grid.Row="1" Orientation="Horizontal" BackgroundColor="{StaticResource Background}">
+            <Image HeightRequest="100" HorizontalOptions="Center" Source="trendicon.png" VerticalOptions="End" WidthRequest="10000" Margin="-120"></Image>
+            <StackLayout Grid.Row="1" Orientation="Horizontal" BackgroundColor="{StaticResource Background}" Margin="120">
                 <ListView x:Name="lstTrendImages" ItemsSource="{Binding TrendImageViewList}" ItemTapped="lstTrendImages_ItemTapped" HasUnevenRows="True" Margin="60,20,40,0">
                 <ListView.ItemTemplate>
                     <DataTemplate>

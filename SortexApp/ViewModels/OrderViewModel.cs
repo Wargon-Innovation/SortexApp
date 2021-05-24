@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -40,7 +41,7 @@ namespace SortexApp.ViewModels
 
                 await Application.Current.MainPage.DisplayAlert("Error", "Connection unstable (" + ex.Message + ")", "Cancel");
             }
-
+            
             OrderList = new ObservableCollection<Order>(OrderList.OrderBy(i => i.Id).Reverse().ToList());
         }
         

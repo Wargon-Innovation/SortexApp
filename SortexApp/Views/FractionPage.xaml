@@ -23,8 +23,8 @@
                     </ContentView>
                 </StackLayout>
             </StackLayout>
-
-            <StackLayout Grid.Row="1" Orientation="Horizontal" BackgroundColor="{StaticResource Background}">
+            <Image HeightRequest="100" HorizontalOptions="Center" Source="fractionicon.png" VerticalOptions="End" WidthRequest="10000" Margin="-120"></Image>
+            <StackLayout Grid.Row="1" Orientation="Horizontal" BackgroundColor="{StaticResource Background}" Margin="120">
                 <ListView ItemsSource="{Binding FractionList}" HasUnevenRows="True" Margin="60,20,40,0" ItemTapped="ListView_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
