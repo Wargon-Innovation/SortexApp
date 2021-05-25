@@ -67,16 +67,18 @@
                                         <StackLayout>
                                             <Label Text="{Binding Classification}" IsVisible="{Binding IsVisible}"  TextColor="White"></Label>
                                             <Label Text="{Binding Gender}" IsVisible="{Binding IsVisible}" TextColor="White"></Label>
+                                            
+                                            <Button Text="Visa alla märkesbilder"></Button>
                                         </StackLayout>
                                         
                                     </Frame>
-                                    <Frame BackgroundColor="{StaticResource Background}"
+                                    <!--<Frame BackgroundColor="{StaticResource Background}"
                                            IsVisible="{Binding IsVisible}"
                                            BorderColor="{StaticResource Primary}"
                                            VerticalOptions="Center"
                                            HasShadow="true"
                                            Margin="0">
-                                        <StackLayout BackgroundColor="Yellow" HorizontalOptions="FillAndExpand">
+                                        --><!--<StackLayout BackgroundColor="Yellow" HorizontalOptions="FillAndExpand">
                                             
                                             <flv:FlowListView FlowColumnCount="3"
                                                               SeparatorVisibility="Default"
@@ -93,7 +95,7 @@
                                             </DataTemplate>
                                         </flv:FlowListView.FlowColumnTemplate>
                                     </flv:FlowListView>
-                                            <!--<ListView ItemsSource="{Binding brandImages}" RowHeight="100" HeightRequest="100">
+                                            --><!--<ListView ItemsSource="{Binding brandImages}" RowHeight="100" HeightRequest="100">
                                             <ListView.ItemTemplate>
                                                 <DataTemplate>
                                                     <ViewCell>
@@ -101,9 +103,9 @@
                                                     </ViewCell>
                                                 </DataTemplate>
                                             </ListView.ItemTemplate>
-                                        </ListView>-->
-                                    </StackLayout>
-                                    </Frame>
+                                        </ListView>--><!--
+                                    </StackLayout>--><!--
+                                    </Frame>-->
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

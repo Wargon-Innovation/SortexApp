@@ -106,8 +106,8 @@
     <FlyoutItem Title="Märken" Icon="brandicon.png">
         <ShellContent Route="BrandPage" ContentTemplate="{DataTemplate local:BrandPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Trender" Icon="trendicon.png">
-        
+    <FlyoutItem Title="Moodboard" Icon="modeboardicon.png">
+        <ShellContent Route="MoodboardPage" ContentTemplate="{DataTemplate local:MoodboardPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Märken" Icon="brandicon.png">
         
