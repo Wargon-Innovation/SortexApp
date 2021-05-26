@@ -7,6 +7,14 @@ namespace SortexApp.Models
     public class Tag
     {
         public int Id { get; set; }
-        public string Value { get; set; }
+
+        private string _value;
+
+        public string Value
+        {
+            get { return _value.ToLower(); }
+            set { _value = value; }
+        }
+
     }
 }

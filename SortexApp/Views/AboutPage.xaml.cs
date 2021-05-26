@@ -20,8 +20,7 @@ namespace SortexApp.Views
 
         private async void BtnFraction_Clicked(object sender, EventArgs e)
         {
-            //FractionPage fractionPage = new FractionPage();
-            //await Navigation.PushAsync(fractionPage);
+            
             await App.Fraction.LoadFractionAsync();
             await Shell.Current.GoToAsync($"//{nameof(FractionPage)}");
 
@@ -29,9 +28,8 @@ namespace SortexApp.Views
 
         private async void BtnOrder_Clicked(object sender, EventArgs e)
         {
-             trendCount = App.Trend.TrendList.Count();
-            //OrderPage orderPage = new OrderPage();            
-            //await Navigation.PushAsync(orderPage);
+            trendCount = App.Trend.TrendList.Count();
+            
             await App.Order.LoadOrderAsync();
             await Shell.Current.GoToAsync($"//{nameof(OrderPage)}");
             

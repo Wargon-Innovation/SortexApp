@@ -134,10 +134,10 @@ namespace SortexApp.ViewModels
         //toggle
         internal void HideOrShowTrends(TrendImageView trend)
         {
-            trend.IsVisible = true;
+            //trend.IsVisible = true;
 
             UpdateTrend(trend);
-            if (_oldTrend == trend)
+            if (_oldTrend == trend && trend.IsVisible)
             {
                 //Klicka två gånger för att gömma
                 trend.IsVisible = !trend.IsVisible;

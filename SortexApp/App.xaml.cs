@@ -15,7 +15,7 @@ namespace SortexApp
         static public TrendViewModel Trend { get; set; } = new TrendViewModel();
         static public BrandViewModel Brand { get; set; } = new BrandViewModel();
         static public MoodboardViewModel Moodboard { get; set; } = new MoodboardViewModel();
-        
+        static public AssignmentViewModel Assignment { get; set; } = new AssignmentViewModel();
 
 
         public App()
@@ -36,7 +36,7 @@ namespace SortexApp
             await Trend.LoadTrendAsync();
             await Brand.LoadBrandAsync();
             await Moodboard.LoadMoodboardAsync();
-            
+            await Assignment.LoardAssignmentAsync();
          }
 
         protected override void OnSleep()

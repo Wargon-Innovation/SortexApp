@@ -14,6 +14,7 @@ namespace SortexApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BrandPage : ContentPage
     {
+        public BrandView brandId = new BrandView();
         private bool isPlaceHolder;
         public BrandPage()
         {
@@ -36,7 +37,7 @@ namespace SortexApp.Views
             else
             {
                 isPlaceHolder = true;
-                brandListView.ItemsSource = App.Brand.SearchBrand(e.NewTextValue);
+                brandListView.ItemsSource = App.Brand.SearchBrand(e.NewTextValue.ToLower());
             }
             brandListView.EndRefresh();
         }
@@ -53,10 +54,19 @@ namespace SortexApp.Views
             {
                 vm.HideOrShowBrand(order);
             }
+
+            brandId = e.Item as BrandView;
         }
         private void SearchBar_SearchButtonPressed(object sender, EventArgs e)
         {
 
+        }
+
+        private async void btnImage_Clicked(object sender, EventArgs e)
+        {
+            BrandDetailsPage brandDetails = new BrandDetailsPage();
+            brandDetails.BindingContext = brandId;
+            await Navigation.PushAsync(brandDetails);
         }
     }
 }

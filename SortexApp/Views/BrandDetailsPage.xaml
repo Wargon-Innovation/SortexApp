@@ -1,12 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:vm="clr-namespace:SortexApp.Models"
              x:Class="SortexApp.Views.BrandDetailsPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+   
+
+        <ContentPage.BindingContext>
+            <vm:BrandView />
+        </ContentPage.BindingContext>
+
+          
+        <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource Background}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+           
+            <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                        <Image Source="sortexiconblue.png"  VerticalOptions="Center" HeightRequest="64" />
+                    </ContentView>
+                </StackLayout>
+            </StackLayout>
+            <Label x:Name="brandId" Text="{Binding Id}" IsVisible="false"></Label>
+            <StackLayout Grid.Row="1" Orientation="Horizontal" BackgroundColor="{StaticResource Background}" HorizontalOptions="CenterAndExpand">
+                <StackLayout Padding="10">
+                    <Label x:Name="emptyImageText" Text="Det finns inga bilder att visa på detta märke" IsVisible="false" TextColor="White" FontSize="Medium" HorizontalOptions="Center"></Label>
+                    <flv:FlowListView FlowColumnCount="3"
+                                      SeparatorVisibility="Default"
+                                      HasUnevenRows="True"
+                                      FlowItemsSource="{Binding brandImages}"
+                                      WidthRequest="950">
+
+                        <flv:FlowListView.FlowColumnTemplate>
+                            <DataTemplate>
+                                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                    <Frame VerticalOptions="Center" 
+                                           BackgroundColor="{StaticResource Background}" 
+                                           BorderColor="{StaticResource Primary}" 
+                                           HasShadow="True" 
+                                           Margin="0,0,0,20">
+                                        <StackLayout WidthRequest="250" HeightRequest="400" HorizontalOptions="Center">
+                                        
+                                         <Image x:Name="imgMain" Source="{Binding Image}" HorizontalOptions="Center"></Image>
+                                            <ScrollView>
+                                                <Label Text="{Binding ImageDescription}" TextColor="White"></Label>
+                                                </ScrollView>
+                                    </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </DataTemplate>
+                        </flv:FlowListView.FlowColumnTemplate>
+                    </flv:FlowListView>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

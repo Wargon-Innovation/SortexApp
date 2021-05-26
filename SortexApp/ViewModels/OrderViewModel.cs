@@ -50,10 +50,10 @@ namespace SortexApp.ViewModels
 
         public void HideOrShowOrder(Order order)
         {
-            order.isVisible = true;
+            //order.isVisible = true;
             UpdateOrder(order);
 
-            if (_oldOrder == order)
+            if (_oldOrder == order && order.isVisible)
             {
                 //Klicka två gånger för att gömma
                 order.isVisible = !order.isVisible;

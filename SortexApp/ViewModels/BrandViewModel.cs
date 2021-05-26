@@ -127,34 +127,7 @@ namespace SortexApp.ViewModels
                 }
 
                 BrandViewList.Add(brandView);
-                /*foreach (var brandTag in BrandTagMMList)
-                {
-                    if (brand.Id == brandTag.BrandId)
-                    {
-
-                        foreach (var tag in BrandTagList)
-                        {
-                            if (tag.Id == brandTag.TagId)
-                            {
-                                brandView.TagList.Add(tag);
-                            }
-                        }
-                    }
-                }*/
-
-                /*
-                foreach (var image in BrandImageList)
-                {
-                    if (image.brandId == brand.Id)
-                    {
-                        brandView.brandImages.Add(image);
-                    }
-                }
-                */
-
-                //1. flytta funktion till viewmodel
-                //2. listor, baslista och displaylist som kopia. Ny sökning som ersätter displaylistan.
-                //property visible = false
+               
             }
             BrandViewList = new ObservableCollection<BrandView>(BrandViewList.OrderBy(i => i.Manufacturer).ToList());
 
@@ -166,7 +139,7 @@ namespace SortexApp.ViewModels
         public ObservableCollection<BrandView> SearchBrand(string tag)
         {
             brandHolderList = new ObservableCollection<BrandView>();
-            brandHolderList.Clear();
+            //brandHolderList.Clear();
 
             var brandList = (from tags in App.Brand.BrandTagList
                              join brandTagsMM in App.Brand.BrandTagMMList on tags.Id equals brandTagsMM.TagId
@@ -176,34 +149,26 @@ namespace SortexApp.ViewModels
 
 
 
+           var brandHolder = new HashSet<BrandView>();
 
             //LINQ
             foreach (var brand in brandList)
             {
+
                 var brands = (from rowsBrand in App.Brand.BrandViewList
                               where rowsBrand.Id == brand.Id
                               select rowsBrand).FirstOrDefault();
 
                 brands.Visible = true;
 
-                brandHolderList.Add(brands);
-                RaisePropertyChanged("brandHolderList");
-
-
-                //foreach (var item in BrandViewList)
-                //{
-                //    if (item.Id == brand.Id)
-                //    {
-                //        item.Visible = true;
-
-                //        brandHolderList.Add(item);
-                //        RaisePropertyChanged("brandHolderList");
-
-                //    }
-
-                //}
-
+                brandHolder.Add(brands);
             }
+            foreach (var brand in brandHolder)
+            {
+                brandHolderList.Add(brand);
+                RaisePropertyChanged("brandHolderList");
+            }
+
             return brandHolderList;
 
         }
@@ -211,9 +176,9 @@ namespace SortexApp.ViewModels
 
         internal void HideOrShowBrandPlaceHolder(BrandView brand)
         {
-            brand.IsVisible = true;
+            //brand.IsVisible = true;
             UpdateBrandPlaceHolder(brand);
-            if (_oldBrand == brand)
+            if (_oldBrand == brand && brand.IsVisible)
             {
                 brand.IsVisible = !brand.IsVisible;
                 UpdateBrandPlaceHolder(brand);
@@ -245,9 +210,9 @@ namespace SortexApp.ViewModels
 
         internal void HideOrShowBrand(BrandView brand)
         {
-            brand.IsVisible = true;
+            //brand.IsVisible = true;
             UpdateBrand(brand);
-            if (_oldBrand == brand)
+            if (_oldBrand == brand && brand.IsVisible)
             {
                 brand.IsVisible = !brand.IsVisible;
                 UpdateBrand(brand);

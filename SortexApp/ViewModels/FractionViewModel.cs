@@ -47,10 +47,10 @@ namespace SortexApp.ViewModels
 
         public void HideOrShowFractions(Fraction fraction)
         {
-            fraction.IsVisible = true;
+            //fraction.IsVisible = true;
 
             UpdateFraction(fraction);
-            if (_oldfraction==fraction)
+            if (_oldfraction==fraction && fraction.IsVisible)
             {
                 //Klicka två gånger för att gömma
                 fraction.IsVisible = !fraction.IsVisible;

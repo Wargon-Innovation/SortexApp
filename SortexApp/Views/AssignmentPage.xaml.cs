@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DLToolkit.Forms.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,13 +11,13 @@ using Xamarin.Forms.Xaml;
 namespace SortexApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MoodboardPage : ContentPage
+    public partial class AssignmentPage : ContentPage
     {
-        public MoodboardPage()
+        public AssignmentPage()
         {
             InitializeComponent();
-            BindingContext = App.Moodboard;
-            
+            BindingContext = App.Assignment;
+            FlowListView.Init(); 
         }
     }
 }

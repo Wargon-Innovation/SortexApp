@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:SortexApp.ViewModels"
+             x:Class="SortexApp.Views.AssignmentPage"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView">
+
+
+    <ContentPage.BindingContext>
+        <vm:AssignmentViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource Background}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                        <Image Source="sortexiconblue.png"  VerticalOptions="Center" HeightRequest="64" />
+                    </ContentView>
+                </StackLayout>
+            </StackLayout>
+            <Image HeightRequest="100" HorizontalOptions="Center" Source="assignmenticon.png" VerticalOptions="End" WidthRequest="10000" Margin="-100"></Image>
+
+            <StackLayout Grid.Row="1" Orientation="Horizontal" BackgroundColor="{StaticResource Background}" HorizontalOptions="FillAndExpand" Margin="100">
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <flv:FlowListView FlowColumnCount="2"
+                              SeparatorVisibility="Default"
+                              HasUnevenRows="True"
+                              FlowItemsSource="{Binding AssignmentList}"
+                              >
+                <flv:FlowListView.FlowColumnTemplate>
+                    <DataTemplate>
+                                <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+                                    <Frame VerticalOptions="Start" 
+                                           BackgroundColor="{StaticResource Background}" 
+                                           BorderColor="{StaticResource Primary}" 
+                                           HasShadow="True" 
+                                           Margin="0,0,0,20"
+                                           >
+                                        <StackLayout HeightRequest="500" HorizontalOptions="Center">
+                                     <ScrollView>
+                                                <StackLayout>
+                                                    <Label Text="{Binding Name}" TextColor="White" HorizontalTextAlignment="Center" FontSize="Medium" TextDecorations="Underline" TextTransform="Uppercase"></Label>
+                                                    <Label Text="{Binding Role}" TextColor="White" FontSize="Medium" FontAttributes="Italic"></Label>
+                                                    <Label Text="{Binding Description}" TextColor="White"></Label>
+                                                    
+                                                </StackLayout>
+                                            </ScrollView>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </flv:FlowListView.FlowColumnTemplate>
+            </flv:FlowListView>
+                </StackLayout>
+            </StackLayout>
+            <!--<StackLayout Grid.Row="1" BackgroundColor="{StaticResource Background}" Margin="100">
+                <ListView ItemsSource="{Binding AssignmentList}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame BackgroundColor="{StaticResource Background}"
+                                           BorderColor="{StaticResource Primary}"
+                                           HasShadow="true"
+                                           >
+                                    <StackLayout>
+                                    <Label Text="{Binding Name}" TextColor="White" HorizontalTextAlignment="Center" FontSize="Header" TextDecorations="Underline"></Label>
+                                    <Label Text="{Binding Description}" TextColor="White"></Label>
+                                    <Label Text="{Binding Role}" TextColor="White"></Label>
+                                </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>-->
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
