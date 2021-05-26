@@ -38,7 +38,7 @@
                                     <StackLayout>
                                         <Label Text="{Binding Name}" TextColor="White" HorizontalOptions="Center" FontSize="Header"></Label>
                                         <Image x:Name="imgMain" Source="{Binding Image}" WidthRequest="200" HeightRequest="350" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
-                                        <Label Text="{Binding Description}" TextColor="Green"></Label>
+                                        <Label Text="{Binding Description}" TextColor="White"></Label>
                                     </StackLayout>
                                 </Frame>
                             </StackLayout>
