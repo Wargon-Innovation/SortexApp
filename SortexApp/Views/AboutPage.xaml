@@ -6,6 +6,7 @@
              xmlns:vm="clr-namespace:SortexApp.ViewModels"
              xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
              Title="{Binding Title}">
+
     
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
@@ -61,37 +62,52 @@
 
                 <StackLayout  Orientation="Horizontal" HorizontalOptions="Center">
 
-                    <Button BorderWidth="5" BorderColor="{StaticResource Accent}" Margin="0,20,20,0" Text="Trender" CornerRadius="10" Clicked="BtnTrend_Clicked"
-                        
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White"
-                        WidthRequest="270"
-                        HeightRequest="130"
+                    <Button BorderWidth="5" BorderColor="{StaticResource Accent}"
+                            Margin="0,20,20,0"
+                            Text="Trender"
+                            CornerRadius="10"
+                            Clicked="BtnTrend_Clicked"
+                            BackgroundColor="{StaticResource Primary}"
+                            TextColor="White"
+                            WidthRequest="270"
+                            HeightRequest="130"
                             ImageSource="trendicon.png"/>
-                    <Button BorderWidth="5" BorderColor="{StaticResource Accent}"  Margin="0,20,0,0" Text="MoodBoard" CornerRadius="10" 
-                        Command="{Binding }"
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White"
-                        WidthRequest="270"
-                        HeightRequest="130"
-                        ImageSource="modeboardicon.png"
+                    <Button BorderWidth="5" BorderColor="{StaticResource Accent}"
+                            Margin="0,20,0,0" 
+                            Text="MoodBoard"
+                            CornerRadius="10" 
+                            Clicked="BtnMoodboard_Clicked"
+                            BackgroundColor="{StaticResource Primary}"
+                            TextColor="White"
+                            WidthRequest="270"
+                            HeightRequest="130"
+                            ImageSource="modeboardicon.png"
                         />
                 </StackLayout>
-                <StackLayout  Orientation="Horizontal" HorizontalOptions="Center">
-                    <Button BorderWidth="5" BorderColor="{StaticResource Accent}" Margin="0,20,20,0" Text="Märken" CornerRadius="10"
-                        Command="{Binding }"
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White"
-                        WidthRequest="270"
-                        HeightRequest="130"
-                        ImageSource="brandicon.png"/>
-                    <Button BorderWidth="5" BorderColor="{StaticResource Accent}" Margin="0,20,0,0" Text="Att tänka på" CornerRadius="10"
-                        Command="{Binding }"
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White"
-                        WidthRequest="270"
-                        HeightRequest="130"
-                        ImageSource="assignmenticon.png"/>
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="Center">
+                    <Button BorderWidth="5"
+                            BorderColor="{StaticResource Accent}" 
+                            Margin="0,20,20,0" 
+                            Text="Märken" 
+                            CornerRadius="10"
+                            BackgroundColor="{StaticResource Primary}"
+                            Clicked="BtnBrands_Clicked"
+                            TextColor="White"
+                            WidthRequest="270"
+                            HeightRequest="130"
+                            ImageSource="brandicon.png"/>
+                    <Button BorderWidth="5" 
+                            BorderColor="{StaticResource Accent}"
+                            Margin="0,20,0,0"
+                            Text="Att tänka på" 
+                            CornerRadius="10"
+                            Clicked="BtnAssignment_Clicked"
+                            BackgroundColor="{StaticResource Primary}"
+                            TextColor="White"
+                            WidthRequest="270"
+                            HeightRequest="130"
+                            ImageSource="assignmenticon.png"/>
                 </StackLayout>
             </StackLayout>
             

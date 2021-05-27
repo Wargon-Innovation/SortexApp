@@ -45,7 +45,7 @@ namespace SortexApp.ViewModels
             FractionList = new ObservableCollection<Fraction>(FractionList.OrderBy(i => i.Number).ToList());
         }
 
-        public void HideOrShowFractions(Fraction fraction)
+        internal void HideOrShowFractions(Fraction fraction)
         {
             //fraction.IsVisible = true;
 

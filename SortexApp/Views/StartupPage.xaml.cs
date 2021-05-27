@@ -10,12 +10,13 @@ using Xamarin.Forms.Xaml;
 namespace SortexApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TestPage : ContentPage
+    public partial class StartupPage : ContentPage
     {
-        public TestPage()
+        public StartupPage()
         {
             InitializeComponent();
-            BindingContext = App.Order;
         }
+
+       
     }
 }

@@ -59,6 +59,7 @@
                                             </StackLayout>
                                             <Label Text="Beskrivning" FontAttributes="Bold" IsVisible="{Binding isVisible}" TextColor="White" TextDecorations="Underline" FontSize="Medium" HorizontalTextAlignment="Start"></Label>
                                             <Label Text="{Binding Description}" IsVisible="{Binding isVisible}"  TextColor="White" BackgroundColor="{StaticResource Background}"></Label>
+                                            <Label Text="{Binding Contact}" TextColor="White" FontAttributes="Italic"></Label>
                                            
                                         </StackLayout>
                                     </Frame>

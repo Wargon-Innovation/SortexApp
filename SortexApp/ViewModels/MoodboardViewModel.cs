@@ -17,7 +17,7 @@ namespace SortexApp.ViewModels
         public ObservableCollection<Moodboard> MoodboardList { get; set; } = new ObservableCollection<Moodboard>();
 
         public event PropertyChangedEventHandler PropertyChanged;
-        internal async Task LoadMoodboardAsync()
+        internal async System.Threading.Tasks.Task LoadMoodboardAsync()
         {
             try
             {

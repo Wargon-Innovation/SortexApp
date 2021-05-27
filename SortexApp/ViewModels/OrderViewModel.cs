@@ -48,7 +48,7 @@ namespace SortexApp.ViewModels
 
 
 
-        public void HideOrShowOrder(Order order)
+        internal void HideOrShowOrder(Order order)
         {
             //order.isVisible = true;
             UpdateOrder(order);

@@ -87,11 +87,15 @@
         <Controls:FlyoutHeader />
     </Shell.FlyoutHeader>
 
- 
-    
+
+
+    <!--<FlyoutItem Title="startup">
+        <ShellContent Route="StartupPage" Shell.FlyoutBehavior="Disabled" IsVisible="True" ContentTemplate="{DataTemplate local:StartupPage}" />
+    </FlyoutItem>-->
     
     <FlyoutItem Title="Hem" Icon="sorticonaccent.png">
-        <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent Route="AboutPage"
+                      ContentTemplate="{DataTemplate local:AboutPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Fraktioner" Icon="fractionicon.png">
     <ShellContent Route="FractionPage" ContentTemplate="{DataTemplate local:FractionPage}" />
@@ -112,7 +116,7 @@
     <FlyoutItem Title="Viktigt att tänka på" Icon="assignmenticon.png">
         <ShellContent Route="AssignmentPage" ContentTemplate="{DataTemplate local:AssignmentPage}" />
     </FlyoutItem>
-
+   
     <!--<FlyoutItem Title="Trend" Icon="trendicon.png">
         <ShellContent Route="TestPage" ContentTemplate="{DataTemplate local:TestPage}" />
     </FlyoutItem>-->
@@ -132,7 +136,12 @@
         await Shell.Current.GoToAsync("//LoginPage");
     -->
     <TabBar>
-        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}"></ShellContent>
+        <ShellContent Route="StartupPage"
+                  Shell.FlyoutBehavior="Disabled"
+                  ContentTemplate="{DataTemplate local:StartupPage}"/>
+    </TabBar>
+    <TabBar>
+        <ShellContent Route="LoginPage" Shell.FlyoutBehavior="Disabled" ContentTemplate="{DataTemplate local:LoginPage}"></ShellContent>
         
     </TabBar>
     <TabBar>

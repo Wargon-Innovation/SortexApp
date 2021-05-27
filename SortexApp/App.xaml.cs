@@ -17,6 +17,7 @@ namespace SortexApp
         static public MoodboardViewModel Moodboard { get; set; } = new MoodboardViewModel();
         static public AssignmentViewModel Assignment { get; set; } = new AssignmentViewModel();
 
+        static public bool isLogedIn = false;
 
         public App()
         {
@@ -24,13 +25,12 @@ namespace SortexApp
             
             DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
-            
+
         }
 
         protected override async void OnStart()
         {
            
-
             await Order.LoadOrderAsync();
             await Fraction.LoadFractionAsync();
             await Trend.LoadTrendAsync();
