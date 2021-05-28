@@ -12,27 +12,55 @@
     <ContentPage.BindingContext>
         <vm:LoginViewModel />
     </ContentPage.BindingContext>
-    
+
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" Padding="30" Spacing="40">
-            <BoxView HeightRequest="10"/>
-            <Image HorizontalOptions="Center" WidthRequest="300" Source="maco.jpg"/>
-            <Frame BackgroundColor="#BF043055" HasShadow="False">
-                <StackLayout Orientation="Vertical" Spacing="10">
-                    <Entry x:Name="Username" Text="{Binding UserName}" Placeholder="Email"   
-                           PlaceholderColor="White" HeightRequest="40"   
-                           Keyboard="Email"  
+        <Grid BackgroundColor="{StaticResource Accent}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                        <Image Source="sortexiconblue.png" VerticalOptions="Center" HeightRequest="64" />
+                    </ContentView>
+                </StackLayout>
+            </StackLayout>
+
+
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" WidthRequest="500" Padding="30" Spacing="40" Grid.Row="1" BackgroundColor="{StaticResource Accent}">
+                <BoxView HeightRequest="10"/>
+                <Frame BackgroundColor="{StaticResource Background}"
+                       HasShadow="False"
+                       CornerRadius="30"
+                       BorderColor="{StaticResource Primary}"
+                       >
+                    <StackLayout Orientation="Vertical"
+                                 Spacing="10">
+                        <Entry x:Name="Username" Text="{Binding UserName}" Placeholder="Användarnamn"   
+                           PlaceholderColor="White"
+                           HeightRequest="60"
+                           Keyboard="Text"  
                            TextColor="White"/>
-                    <Entry x:Name="Password" Text="{Binding Password}" Placeholder="Senha"   
-                           PlaceholderColor="White" HeightRequest="40"   
+                        <Entry x:Name="Password" Text="{Binding Password}" Placeholder="Lösenord"   
+                           PlaceholderColor="White"
+                            HeightRequest="60"   
                            IsPassword="True"  
                            TextColor="White"/>
-                </StackLayout>
-            </Frame>
-            <Button Command="{Binding SubmitCommand}" Text="Login" TextColor="White"  
-                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
-                    BackgroundColor="#088da5" />
-        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Button Command="{Binding SubmitCommand}"
+                        CornerRadius="30"
+                        Text="Logga in"
+                        TextColor="White"  
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="{StaticResource Background}"
+                        BorderWidth="2"
+                        BorderColor="{StaticResource Primary}"/>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
 

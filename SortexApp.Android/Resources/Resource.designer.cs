@@ -11812,46 +11812,49 @@ namespace SortexApp.Droid
 			public const int rundOrder = 2131165334;
 			
 			// aapt resource value: 0x7F070097
-			public const int sortex = 2131165335;
+			public const int signouticon = 2131165335;
 			
 			// aapt resource value: 0x7F070098
-			public const int sortexgif = 2131165336;
+			public const int sortex = 2131165336;
 			
 			// aapt resource value: 0x7F070099
-			public const int sortexicon = 2131165337;
+			public const int sortexgif = 2131165337;
 			
 			// aapt resource value: 0x7F07009A
-			public const int sortexiconblue = 2131165338;
+			public const int sortexicon = 2131165338;
 			
 			// aapt resource value: 0x7F07009B
-			public const int sortextransparent = 2131165339;
+			public const int sortexiconblue = 2131165339;
 			
 			// aapt resource value: 0x7F07009C
-			public const int sorticon = 2131165340;
+			public const int sortextransparent = 2131165340;
 			
 			// aapt resource value: 0x7F07009D
-			public const int sorticonaccent = 2131165341;
+			public const int sorticon = 2131165341;
 			
 			// aapt resource value: 0x7F07009E
-			public const int test_custom_background = 2131165342;
+			public const int sorticonaccent = 2131165342;
 			
 			// aapt resource value: 0x7F07009F
-			public const int tooltip_frame_dark = 2131165343;
+			public const int test_custom_background = 2131165343;
 			
 			// aapt resource value: 0x7F0700A0
-			public const int tooltip_frame_light = 2131165344;
+			public const int tooltip_frame_dark = 2131165344;
 			
 			// aapt resource value: 0x7F0700A1
-			public const int trendicon = 2131165345;
+			public const int tooltip_frame_light = 2131165345;
 			
 			// aapt resource value: 0x7F0700A2
-			public const int wargonHeader = 2131165346;
+			public const int trendicon = 2131165346;
 			
 			// aapt resource value: 0x7F0700A3
-			public const int wargonImage = 2131165347;
+			public const int wargonHeader = 2131165347;
 			
 			// aapt resource value: 0x7F0700A4
-			public const int xamarin_logo = 2131165348;
+			public const int wargonImage = 2131165348;
+			
+			// aapt resource value: 0x7F0700A5
+			public const int xamarin_logo = 2131165349;
 			
 			static Drawable()
 			{

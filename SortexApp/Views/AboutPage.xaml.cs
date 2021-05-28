@@ -27,8 +27,8 @@ namespace SortexApp.Views
 
         private async Task CheckLogin()
         {
-            // should check for valid login instead
-            await Task.Delay(2000);
+            //// should check for valid login instead
+            //await Task.Delay(2000);
 
             if (!App.isLogedIn)
             {
