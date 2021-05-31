@@ -48,7 +48,7 @@
                                             </StackLayout>
                                             <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
 
-                                                <Label Text="{Binding Start, StringFormat='{0:yyyy/MM/dd /  }'}" TextColor="{StaticResource Primary}"
+                                                <Label Text="{Binding Start, StringFormat='{0:yyyy/MM/dd  /  }'}" TextColor="{StaticResource Primary}"
                                                    FontAttributes="Italic"
                                                    FontSize="Medium"
                                                    HorizontalOptions="Center" ></Label>
