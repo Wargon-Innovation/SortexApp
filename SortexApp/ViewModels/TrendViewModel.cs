@@ -41,7 +41,7 @@ namespace SortexApp.ViewModels
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert("Error", "Connection unstable", "Cancel");
+                    await Application.Current.MainPage.DisplayAlert("Fel", "Internetuppkopplingen är ostabil, kolla anslutningen", "Cancel");
                 }
 
                 //Hämta trendImages
@@ -55,7 +55,7 @@ namespace SortexApp.ViewModels
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert("Error", "Connection unstable", "Cancel");
+                    await Application.Current.MainPage.DisplayAlert("Fel", "Internetuppkopplingen är ostabil, kolla anslutningen", "Cancel");
                 }
 
                 //HÄMTA TRENDIMAGEMM
@@ -69,13 +69,13 @@ namespace SortexApp.ViewModels
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert("Error", "Connection unstable", "Cancel");
+                    await Application.Current.MainPage.DisplayAlert("Fel", "Internetuppkopplingen är ostabil, kolla anslutningen", "Cancel");
                 }
             }
             catch (Exception ex)
             {
 
-                await Application.Current.MainPage.DisplayAlert("Error", "Connection unstable (" + ex.Message + ")", "Cancel");
+                await Application.Current.MainPage.DisplayAlert("Fel", "Internetuppkopplingen är ostabil, kolla anslutningen", "Cancel");
             }
 
             //ÖPPNA EJ!!!!!

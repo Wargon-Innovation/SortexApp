@@ -40,7 +40,7 @@ namespace SortexApp.ViewModels
         }
         public async void OnSubmit()
         {
-            if (userName != "test" || password != "test")
+            if (userName != "Wargonsortex" || password != "Sortex414")
             {
                 DisplayInvalidLoginPrompt();
             }

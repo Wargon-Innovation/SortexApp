@@ -16,7 +16,7 @@ namespace SortexApp.Views
         {
             InitializeComponent();
             BindingContext = App.Moodboard;
-            
+            Title = "Moodboard";
         }
     }
 }

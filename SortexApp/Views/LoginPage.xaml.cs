@@ -18,7 +18,7 @@ namespace SortexApp.Views
             this.BindingContext = new LoginViewModel();
             var vm = new LoginViewModel();
             this.BindingContext = vm;
-            vm.DisplayInvalidLoginPrompt += () => DisplayAlert("Error", "Invalid Login, try again", "OK");
+            vm.DisplayInvalidLoginPrompt += () => DisplayAlert("Hoppsan!", "Fel användarnamn eller lösenord", "OK");
             
 
             Username.Completed += (object sender, EventArgs e) =>

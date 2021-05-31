@@ -18,11 +18,11 @@ namespace SortexApp.Views
             InitializeComponent();
             Title = "Hem";
         }
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
 
-            CheckLogin();
+            await CheckLogin();
         }
 
         private async Task CheckLogin()
@@ -46,16 +46,16 @@ namespace SortexApp.Views
 
         private async void BtnFraction_Clicked(object sender, EventArgs e)
         {
-            
-            await App.Fraction.LoadFractionAsync();
+
+            //await App.Fraction.LoadFractionAsync();
             await Shell.Current.GoToAsync($"//{nameof(FractionPage)}");
 
         }
 
         private async void BtnOrder_Clicked(object sender, EventArgs e)
         {
-           
-            await App.Order.LoadOrderAsync();
+            //App.Order._oldOrder = null;
+            //await App.Order.LoadOrderAsync();
             await Shell.Current.GoToAsync($"//{nameof(OrderPage)}");
             
         }
@@ -74,18 +74,19 @@ namespace SortexApp.Views
 
         private async void BtnMoodboard_Clicked(object sender, EventArgs e)
         {
-            await App.Moodboard.LoadMoodboardAsync();
+            //await App.Moodboard.LoadMoodboardAsync();
             await Shell.Current.GoToAsync($"//{nameof(MoodboardPage)}");
         }
 
         private async void BtnBrands_Clicked(object sender, EventArgs e)
         {
+
             await Shell.Current.GoToAsync($"//{nameof(BrandPage)}");
         }
 
         private async void BtnAssignment_Clicked(object sender, EventArgs e)
         {
-            await App.Assignment.LoardAssignmentAsync();
+            //await App.Assignment.LoardAssignmentAsync();
             await Shell.Current.GoToAsync($"//{nameof(AssignmentPage)}");
         }
     }

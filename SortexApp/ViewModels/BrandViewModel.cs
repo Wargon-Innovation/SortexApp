@@ -43,7 +43,7 @@ namespace SortexApp.ViewModels
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert("Error", "Connection unstable", "Cancel");
+                    await Application.Current.MainPage.DisplayAlert("Fel", "Internetuppkopplingen är ostabil, kolla anslutningen", "Cancel");
                 }
 
                 //HÄMTA MÄRKESBILDER
@@ -58,7 +58,7 @@ namespace SortexApp.ViewModels
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert("Error", "Connection unstable", "Cancel");
+                    await Application.Current.MainPage.DisplayAlert("Fel", "Internetuppkopplingen är ostabil, kolla anslutningen", "Cancel");
                 }
 
                 //HÄMTA TAGS FÖR SÖKNING PÅ MÄRKEN
@@ -74,7 +74,7 @@ namespace SortexApp.ViewModels
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert("Error", "Connection unstable", "Cancel");
+                    await Application.Current.MainPage.DisplayAlert("Fel", "Internetuppkopplingen är ostabil, kolla anslutningen", "Cancel");
                 }
 
                 //HÄMTA SAMBANDSTABELL FÖR ATT JÄMFÖRA ID 
@@ -89,13 +89,13 @@ namespace SortexApp.ViewModels
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert("Error", "Connection unstable", "Cancel");
+                    await Application.Current.MainPage.DisplayAlert("Fel", "Internetuppkopplingen är ostabil, kolla anslutningen", "Cancel");
                 }
             }
             catch (Exception ex)
             {
 
-                await Application.Current.MainPage.DisplayAlert("Error", "Connection unstable (" + ex.Message + ")", "Cancel");
+                await Application.Current.MainPage.DisplayAlert("Fel", "Internetuppkopplingen är ostabil, kolla anslutningen (" + ex.Message + ")", "Cancel");
             }
 
             //JÄMFÖRA VÄRDEN

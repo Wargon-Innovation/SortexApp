@@ -35,13 +35,13 @@ namespace SortexApp.ViewModels
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert("Error", "Connection unstable", "Cancel");
+                    await Application.Current.MainPage.DisplayAlert("Fel", "Internetuppkopplingen är ostabil, kolla anslutningen", "Cancel");
                 }
             }
             catch (Exception ex)
             {
 
-                await Application.Current.MainPage.DisplayAlert("Error", "Connection unstable (" + ex.Message + ")", "Cancel");
+                await Application.Current.MainPage.DisplayAlert("Fel", "Internetuppkopplingen är ostabil, kolla anslutningen (" + ex.Message + ")", "Cancel");
             }
             AssignmentList = new ObservableCollection<Assignment>(AssignmentList.OrderBy(i => i.Id).Reverse().ToList());
         }
