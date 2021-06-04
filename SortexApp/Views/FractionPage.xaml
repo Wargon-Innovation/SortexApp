@@ -37,7 +37,7 @@
                                         </StackLayout>
                                         
                                     </Frame>
-                                    <Frame BackgroundColor="{StaticResource Secondary}" IsVisible="{Binding IsVisible}" BorderColor="{StaticResource Primary}" VerticalOptions="Center" HasShadow="True" Margin="0">
+                                    <Frame IsVisible="{Binding IsVisible}" BorderColor="{StaticResource Primary}" VerticalOptions="Center" HasShadow="True" Margin="0" BackgroundColor="{StaticResource Background}">
                                         <Label Text="{Binding Description}" IsVisible="{Binding IsVisible}" TextColor="White"></Label>
                                     </Frame>
                                     

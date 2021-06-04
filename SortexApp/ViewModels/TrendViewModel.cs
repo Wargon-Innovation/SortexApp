@@ -72,7 +72,7 @@ namespace SortexApp.ViewModels
                     await Application.Current.MainPage.DisplayAlert("Fel", "Internetuppkopplingen är ostabil, kolla anslutningen", "Cancel");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 await Application.Current.MainPage.DisplayAlert("Fel", "Internetuppkopplingen är ostabil, kolla anslutningen", "Cancel");

@@ -113,7 +113,7 @@
     <FlyoutItem Title="Moodboard" Icon="modeboardicon.png">
         <ShellContent Route="MoodboardPage" ContentTemplate="{DataTemplate local:MoodboardPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Viktigt att tänka på" Icon="assignmenticon.png">
+    <FlyoutItem Title="Att tänka på" Icon="assignmenticon.png">
         <ShellContent Route="AssignmentPage" ContentTemplate="{DataTemplate local:AssignmentPage}" />
     </FlyoutItem>
    
